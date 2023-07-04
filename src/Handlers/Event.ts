@@ -78,7 +78,7 @@ export class EventHandler {
 
     public sendMessageOnJoiningGroup = async (group: { subject: string; jid: string }): Promise<void> => {
         this.client.log(`${chalk.blueBright('JOINED')} ${chalk.cyanBright(group.subject)}`)
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/05757091255ef30d2cca4.mp4')
+        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/62a5bf019186cf1fa5f62.mp4')
         return void (await this.client.sendMessage(group.jid, {
             video: buffer,
             gifPlayback: true,
