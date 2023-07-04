@@ -50,10 +50,10 @@ export class EventHandler {
                 : event.action === 'demote'
                 ? `Ara Ara, looks like *@${
                       event.participants[0].split('@')[0]
-                  }* I don't know how to tell you this but has been demoted`
+                  }* 📚you're fired and Adminship isn't for you`
                 : `Congratulations *@${
                       event.participants[0].split('@')[0]
-                  }*, you're an admin! I hope you take care of us`
+                  }*, ❤️you're an admin! I hope you take care of us`
         if (event.action === 'add') {
             let imageUrl: string | undefined
             try {
