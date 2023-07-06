@@ -20,23 +20,14 @@ export default class extends BaseCommand {
         const pfp = pfpUrl ? await this.client.utils.getBuffer(pfpUrl) : (this.client.assets.get('404') as Buffer)
         let text = ''
         text += `*ID*: ${id}\n`
-        
         text += `*Subject*: ${subject}\n`
-        
         text += `*Owner*: ${owner}\n`
-        
         text += `*Participants*: ${participants.length}\n`
-        
         text += `*Admins*: ${admins?.length ?? 0}\n`
-        
-        text += `*NSFW*: ${nsfw}\n`
-        
+        text += `*NSFW*: ${nsfw}\n` 
         text += `*Mods*: ${mods}\n`
-        
         text += `*Wild*: ${wild}\n`
-        
         text += `*Chara*: ${chara}\n`
-        
         text += `*Events*: ${events}`
         return void (await M.reply(
             pfp,
