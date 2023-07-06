@@ -78,7 +78,7 @@ export class MessageHandler {
         const buffer = await this.client.utils.getBuffer(image)
         return void (await this.client.sendMessage(jid, {
             image: buffer,
-            caption: `A wild Pokemon appeared!`
+            caption: `A wild Pokemon appeared! Use *${this.client.config.prefix}catch <pokemon_name>* to catch this pokemon!`
         }))
     }
 
