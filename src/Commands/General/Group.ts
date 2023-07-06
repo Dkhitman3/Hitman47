@@ -1,32 +1,38 @@
 import { Command, BaseCommand, Message } from '../../Structures'
 
 @Command('group', {
-    description: "fuckes  the group info",
+    description: 'Get Group information',
     usage: 'group',
     category: 'general',
     exp: 10
 })
-export default class command extends BaseCommand {
-    override execute = async ({ reply }: Message): Promise<void> => {
-        const url =
-            (await this.client.profilePictureUrl(M.from).catch(() => null)) ??
-            'https://link'
-        const info = await this.client.database.getGroup(M.from)
-        const users = await this.client.DB.user.find({})
-        
-            await M.reply({
-            image: { url },
-            jpegThumbnai: image.toString('base64'),
-            caption: text`
-                🏷️ *Group Subject:* ${M.group?.metadata.subject ?? 'N/A'}
-
-                👿 *Admins:* ${M.group?.admins.length ?? 0}
-
-                🧧 *Total Members ugly:* ${M.group?.participants.length ?? 0}
-
-                ❤️ *Group Description:*\n${group.description}
-        
-            }\n\n🎇*Users:* ${users.length}`
+export default class extends BaseCommand {
+    public override execute = async (M: Message): Promise<void> => {
+        if (!M.groupMetadata) return void M.reply('*Try Again*')
+        const { id, subject, owner, participants, admins } = M.groupMetadata
+        const { nsfw, mods, events } = await this.client.DB.getGroup(id)
+        let pfpUrl: string | undefined
+        try {
+            pfpUrl = await this.client.profilePictureUrl(id, 'image')
+        } catch {
+            pfpUrl = undefined
+        }
+        const pfp = pfpUrl ? await this.client.utils.getBuffer(pfpUrl) : (this.client.assets.get('404') as Buffer)
+        let text = ''
+        text += `*ID*: ${id}\n`
+        text += `*Subject*: ${subject}\n`
+        text += `*Owner*: ${owner}\n`
+        text += `*Participants*: ${participants.length}\n`
+        text += `*Admins*: ${admins.length}\n`
+        text += `*NSFW*: ${nsfw}\n`
+        text += `*Mods*: ${mods}\n`
+        text += `*Events*: ${events}`
+        return void (await M.reply(
+            pfp,
+            'image',
+            undefined,
+            undefined,
+            text
         ))
     }
-}
+               }
