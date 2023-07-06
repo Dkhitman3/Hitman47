@@ -82,7 +82,7 @@ export class EventHandler {
         return void (await this.client.sendMessage(group.jid, {
             video: buffer,
             gifPlayback: true,
-            caption: `Thanks for adding Please type *${this.client.config.prefix}help* to get started.`
+            caption: `Thanks for adding Please type *${this.client.config.prefix}help* to get started\n\n How to register rules *Set --mods=true*.`
         }))
     }
 }
