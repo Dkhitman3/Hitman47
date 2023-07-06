@@ -23,7 +23,7 @@ export default class extends BaseCommand {
         text += `*Subject*: ${subject}\n`
         text += `*Owner*: ${owner}\n`
         text += `*Participants*: ${participants.length}\n`
-        text += `*Admins*: ${admins.length}\n`
+        text += `*Admins*: ${admins.length ?? 0}\n`
         text += `*NSFW*: ${nsfw}\n`
         text += `*Mods*: ${mods}\n`
         text += `*Events*: ${events}`
@@ -35,4 +35,4 @@ export default class extends BaseCommand {
             text
         ))
     }
-}
+ }
