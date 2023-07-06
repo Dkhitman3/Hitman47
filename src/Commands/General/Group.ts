@@ -10,7 +10,7 @@ export default class extends BaseCommand {
     public override execute = async (M: Message): Promise<void> => {
         if (!M.groupMetadata) return void M.reply('*Try Again*')
         const { id, subject, owner, participants, admins } = M.groupMetadata
-        const { nsfw, mods, events } = await this.client.DB.getGroup(id)
+        const { nsfw, mods, wild, chara, events } = await this.client.DB.getGroup(id)
         let pfpUrl: string | undefined
         try {
             pfpUrl = await this.client.profilePictureUrl(id, 'image')
@@ -26,6 +26,8 @@ export default class extends BaseCommand {
         text += `*Admins*: ${admins?.length ?? 0}\n`
         text += `*NSFW*: ${nsfw}\n`
         text += `*Mods*: ${mods}\n`
+        text += `*Wild*: ${wild}\n`
+        text += `*Chara*: ${chara}\n`
         text += `*Events*: ${events}`
         return void (await M.reply(
             pfp,
