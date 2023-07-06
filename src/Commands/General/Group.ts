@@ -35,4 +35,4 @@ export default class extends BaseCommand {
             text
         ))
     }
-               }
+}
