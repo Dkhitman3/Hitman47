@@ -36,9 +36,9 @@ export default class extends BaseCommand {
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
             text += `\n\n📚 *Note:* 
-                       *➪ Use ${this.client.config.prefix}help <command name> from help the list to see its description and usage*
-                       *➪ Example *${this.client.config.prefix}help profile*
-                       *➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
+*➪ Use ${this.client.config.prefix}help <command name> from help the list to see its description and usage*
+*➪ Example *${this.client.config.prefix}help profile*
+*➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
             return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
