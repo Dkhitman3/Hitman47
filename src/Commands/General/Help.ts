@@ -4,7 +4,7 @@ import { IArgs } from '../../Types'
 @Command('help', {
     description: "Displays the bot's usable commands",
     aliases: ['h', 'menu', 'commands'],
-    cooldown: 30,
+    cooldown: 100,
     exp: 20,
     usage: 'help || help <command_name>',
     category: 'general'
@@ -20,9 +20,9 @@ export default class extends BaseCommand {
             })).filter((command) => command.data.config.category !== 'dev')
             const { nsfw } = await this.client.DB.getGroup(M.from)
             if (!nsfw) commands = commands.filter(({ data }) => data.config.category !== 'nsfw')
-            let text = `😻 *@${M.sender.jid.split('@')[0]}*, *prefix is* "${
+            let text = `💫 *@${M.sender.jid.split('@')[0]}*, *prefix is* "${
                 this.client.config.prefix
-            }"\n\n*━━━❬•Note 😻🚀 Side•❭━━━*\n\n1. *Read the Rules*\n\n2. *Don't Call bots to avoid blocking*\n\n3. *Don't Spam in the group*\n\nThe usable commands are listed below.`
+            }"\n\n1. *Read the Rules*\n\n2. *Don't Call bots to avoid blocking*\n\n3. *Don't Spam in the group*\n\nThe usable commands are listed below.`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
@@ -31,16 +31,11 @@ export default class extends BaseCommand {
             for (const category of categories) {
                 const categoryCommands: string[] = []
                 const filteredCommands = commands.filter((command) => command.data.config.category === category)
-                text += `\n\n*╚━━━❰ ${this.client.utils.capitalize(category)} ❱━━━╝*\n\n`
+                text += `\n\n*━━━━━❰ ${this.client.utils.capitalize(category)} ❱━━━━━*\n\n`
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `
-                    ┌────────────┈❅
-│ ↻     ⊲  Ⅱ  ⊳     ↺
-VOLUME: ▁▂▃▄▅▆▇ 100%
-                    └────────────┈⁂
-  ██░Low Battery■■■■□□□□] 40%\n\n📕 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help report*`
+            text += `\n\n📚 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help report*`
             return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
@@ -60,4 +55,5 @@ VOLUME: ▁▂▃▄▅▆▇ 100%
             )
         }
     }
-}
+                                         }
+                                                                      
