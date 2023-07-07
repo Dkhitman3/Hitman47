@@ -35,7 +35,10 @@ export default class extends BaseCommand {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📚 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help play*`
+            text += `\n\n📚 *Note:* 
+                       *➪ Use ${this.client.config.prefix}help <command name> from help the list to see its description and usage*
+                       *➪ Example *${this.client.config.prefix}help profile*
+                       *➪ <> means required and [ ] means optional, don't include <> or [ ] when using command.*`
             return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
