@@ -5,6 +5,7 @@ import { Command, BaseCommand, Message } from '../../Structures'
     exp: 10,
     cooldown: 10,
     usage: 'claim',
+    aliases: ['buy', 'claim', 'b'],
     category: 'characters'
 })
 export default class extends BaseCommand {
