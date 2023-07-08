@@ -18,11 +18,11 @@ export default class command extends BaseCommand {
         const time = 86400000
         const { lastDaily: cd } = await this.client.DB.getUser(M.sender.jid)
         if (time - (Date.now() - cd) > 0) {
-            const timeLeft = formatTime((time - (Date.now() - cd)) / 500)
+            const timeLeft = formatTime((time - (Date.now() - cd)) / 1000)
             return void M.reply(`You have claimed your daily gold recently. Claim again in ${timeLeft}`)
         }
-        await this.client.DB.setGold(M.sender.jid, 500)
+        await this.client.DB.setGold(M.sender.jid, 1000)
         await this.client.DB.user.updateOne({ jid: M.sender.jid }, { $set: { lastDaily: Date.now() } })
-        return void (await M.reply('*Congratulations 🎉 You have claimed Your Daily 500 Gold* Check you wallet'))
+        return void (await M.reply('*Congratulations 🎉 You have claimed Your Daily 1000 Gold* Check you wallet'))
     }
 }
