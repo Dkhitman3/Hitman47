@@ -15,7 +15,7 @@ export default class command extends BaseCommand {
         if (M.numbers.length < 1) return void M.reply(`amount?`)
         const amount = M.numbers[0]
         const { wallet } = await this.client.DB.getUser(M.sender.jid)
-        if (amount > wallet) return void M.reply(`check ur wallet`)
+        if (amount > wallet) return void M.reply(`you have no gold check ur wallet`)
         if (amount < 500) return void M.reply(`You cant bet less than 500`)
         if (amount > 30000) return void M.reply(`You cant bet more than 30000`)
         const machine = new SlotMachine(3, this.symbols)
