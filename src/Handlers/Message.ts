@@ -144,8 +144,6 @@ export class MessageHandler {
         if (M.chat === 'dm' && !command.config.dm) return void M.reply('This command can only be used in groups')
         if (command.config.category === 'moderation' && !M.sender.isAdmin)
             return void M.reply('This command can only be used by the group admins')
-         if (command.config.category === 'media' && M.from !== '120363161299921264@g.us')
-            return void M.reply('*This command can be used in music group type #support..to get the music group link*')
         if (command.config.casino && M.from !== this.client.config.casinoGroup)
             return void M.reply(
                 `This command can only be used in the casino group. Use ${this.client.config.prefix}support to get the casino group link`
