@@ -289,7 +289,7 @@ export class MessageHandler {
                             const buffer = await this.client.utils.getBuffer(chara.images.jpg.image_url)
                             const MessageX = {
                                 image: buffer,
-                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n🌐 *Source: ${source}*\n\n💰 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`
+                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n💰 *Price: ${price}*\n\n*📑 *About:* ${chara.about}\n\n🌐 *Source: ${source}*\n\n💰 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}buy to have this character in your gallery]*`
                             }
                             this.charaResponse.set(this.chara[i], { price, data: chara })
                             await this.client.sendMessage(this.chara[i], MessageX)
