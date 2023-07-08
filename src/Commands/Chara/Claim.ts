@@ -13,11 +13,11 @@ export default class extends BaseCommand {
         const res = this.handler.charaResponse.get(M.from)
         if (!res) return void M.reply('no chara to claim atm')
         const { wallet, gallery } = await this.client.DB.getUser(M.sender.jid)
-        if (res.price > wallet) return void M.reply('check ur wallet')
+        if (res.price > wallet) return void M.reply('*You cant afford just check ur wallet*')
         this.handler.charaResponse.delete(M.from)
         await this.client.DB.updateUser(M.sender.jid, 'wallet', 'inc', -res.price)
         gallery.push(res.data)
         await this.client.DB.updateUser(M.sender.jid, 'gallery', 'set', gallery)
-        return void M.reply(`You have claimed ${res.data.name}`)
+        return void M.reply(`You have Bought ${res.data.name}`)
     }
 }
