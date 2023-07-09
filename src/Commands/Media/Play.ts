@@ -6,7 +6,7 @@ import { IArgs, YT_Search } from '../../Types'
     description: 'Plays a song of the given term from YouTube',
     cooldown: 30,
     aliases: ['song', 'download', 'music'],
-    exp: 35,
+    exp: 250,
     category: 'media',
     usage: 'play [term]'
 })
