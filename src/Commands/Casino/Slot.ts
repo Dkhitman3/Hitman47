@@ -15,7 +15,7 @@ export default class command extends BaseCommand {
         if (M.numbers.length < 1) return void M.reply(`amount?`)
         const amount = M.numbers[0]
         const { wallet } = await this.client.DB.getUser(M.sender.jid)
-        if (amount > wallet) return void M.reply(`you have no gold check ur wallet`)
+        if (amount > wallet) return void M.reply(`check ur wallet`)
         if (amount < 500) return void M.reply(`You cant bet less than 500`)
         if (amount > 30000) return void M.reply(`You cant bet more than 30000`)
         const machine = new SlotMachine(3, this.symbols)
@@ -23,12 +23,11 @@ export default class command extends BaseCommand {
         const lines = results.lines.filter((line) => !line.diagonal)
         const points = results.lines.reduce((total, line) => total + line.points, 0)
         const resultAmount = points <= 0 ? -amount : amount * points
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/03b20ad7d06ba2b8d8c21.mp4')
         await this.client.DB.setGold(M.sender.jid, resultAmount)
         let text = '🎰 *SLOT MACHINE* 🎰\n\n'
         text += results.visualize()
         text += points <= 0 ? `📉 You lost ${amount} gold` : `📈 You won ${resultAmount} gold`
-        return void (await M.reply(buffer, 'video', true, undefined, text))
+        return void (await M.reply(text))
     }
 
     private symbols = [
@@ -54,3 +53,4 @@ export default class command extends BaseCommand {
         })
     ]
 }
+            
