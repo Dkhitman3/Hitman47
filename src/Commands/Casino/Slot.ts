@@ -6,7 +6,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     description: 'Bets the given amount of gold in a slot machine',
     casino: true,
     usage: 'slot <amount>',
-    cooldown: 20,
+    cooldown: 50,
     exp: 10,
     aliases: ['bet']
 })
@@ -32,17 +32,12 @@ export default class command extends BaseCommand {
 
     private symbols = [
         new SlotSymbol('1', {
-            display: '🎰',
+            display: '🍒',
             points: 1,
             weight: 100
         }),
-        new SlotSymbol('b', {
-            display: '💰',
-            points: 5,
-            weight: 20
-        }),
         new SlotSymbol('2', {
-            display: '💎',
+            display: '🍀',
             points: 1,
             weight: 100
         }),
