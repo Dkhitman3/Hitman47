@@ -10,13 +10,12 @@ import { BaseCommand, Command, Message } from '../../Structures'
 })
 export default class command extends BaseCommand {
     override execute = async (M: Message): Promise<void> => {
-        const { inventory, bank, wallet, pc, party, tag, quizWins } = await this.client.DB.getUser(M.sender.jid)
+        const { inventory, tag, quizWins } = await this.client.DB.getUser(M.sender.jid)
         const { items } = await this.client.DB.getFeature('store')
         let text = `🎒 *Inventory*\n\n🎴 *ID:*\n\t🏮 *Username: ${
             M.sender.username
-        }*\n\t🧧 *Tag: #${tag}*\n\n*>>* 💰 *Gold:* ${wallet + bank}\n*>>* 🍀 *Total Pokemon:* ${
-            pc.length + party.length
-        }\n*>>* 🃏 *Quiz Wins:* ${quizWins}\n*>>* 🔗 *Total Items:* ${inventory.length}`
+        }*\n\t🧧 *Tag: #${tag}*\n\n♥️
+        *>>* 🃏 *Quiz Wins:* ${quizWins}\n*>>* 🔗 *Total Items:* ${inventory.length}`
         if (inventory.length > 0) {
             text += `\n*>>* 📜 *Items:*\n`
             inventory.forEach((x, index) => {
