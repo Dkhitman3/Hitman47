@@ -73,6 +73,9 @@ export class UserSchema {
     @prop({ type: Boolean, required: true, default: false })
     public banned!: boolean
 
+    @prop({ type: () => Ban, required: true, default: () => ({ banned: false }) })
+    public ban!: Ban
+
     @prop({ type: Number, required: true, default: 1 })
     public level!: number
 
