@@ -2,6 +2,24 @@ import { prop, getModelForClass } from '@typegoose/typegoose'
 import { Document } from 'mongoose'
 import { ICharacter, ICharacter as WaifuResponse } from '@shineiichijo/marika'
 
+class Ban {
+    @prop({ type: Boolean, required: true, default: false })
+    public banned!: boolean
+
+    @prop({ type: String })
+    public reason?: string
+
+    @prop({ type: String })
+    public bannedBy?: string
+
+    @prop({ type: String })
+    public bannedIn?: string
+
+    @prop({ type: String })
+    public time?: string
+    
+}
+
 class Inventory {
     @prop({ type: String, required: true })
     public item!: string
