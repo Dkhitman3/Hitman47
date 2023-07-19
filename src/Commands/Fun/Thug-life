@@ -6,7 +6,6 @@ import { createCanvas, loadImage, CanvasRenderingContext2D } from 'canvas'
     description: 'Recreates the thug life meme',
     category: 'fun',
     exp: 30,
-   aliases: ['life', 'thug', 't'],
     cooldown: 25,
     usage: 'thug-life [tag/quote users]'
 })
