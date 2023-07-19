@@ -25,6 +25,10 @@ export class Utils {
         return (Math.floor(Math.random() * (max - min + 1)) + min).toString().substring(1)
     }
 
+    public getRandomInt = (min: number, max: number): number => {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
     public getHangman = (state: number = 0): Buffer => {
         const createLine = (
             ctx: Canvas.CanvasRenderingContext2D,
