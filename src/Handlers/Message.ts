@@ -64,13 +64,15 @@ export class MessageHandler {
         )
         const { bot } = await this.client.DB.getGroup(M.from)
         const commands = ['switch', 'hello', 'hi']
-        const { banned, tag } = await this.client.DB.getUser(M.sender.jid)
-        if (banned) return void M.reply('You are banned from using commands')
+        const { ban, tag, inventory, companion } = await this.client.DB.getUser(M.sender.jid)
+        if (ban.banned) return void M.reply(
+            `You are banned from using commands. Banned by *${ban.bannedBy}* at *${ban.bannedIn}* in *${ban.time} (GMT)*. ❓ Reason: *${ban.reason}*`
+            )
         if (!tag)
             await this.client.DB.updateUser(M.sender.jid, 'tag', 'set', this.client.utils.generateRandomUniqueTag())
         const cmd = args[0].toLowerCase().slice(prefix.length)
         const command = this.commands.get(cmd) || this.aliases.get(cmd)
-        if (!command) return void M.reply('*🚫Do you mean help*')
+        if (!command) return void M.reply(`*🟥Do you mean ${this.client.config.prefix}help*`)
         const disabledCommands = await this.client.DB.getDisabledCommands()
         const index = disabledCommands.findIndex((CMD) => CMD.command === command.name)
         if (index >= 0)
@@ -86,7 +88,7 @@ export class MessageHandler {
             return void M.reply('This command can only be used by the group admins')
         if (command.config.casino && M.from !== this.client.config.casinoGroup)
             return void M.reply(
-                `This command can only be used in the casino group. Use ${this.client.config.prefix}support to get the casino group link`
+                `*This command can only be used in the casino group. Use ${this.client.config.prefix}support to get the casino group link*`
             )
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
         if (command.config.adminRequired && !isAdmin) return void M.reply('I need to be an admin to use this command')
