@@ -44,9 +44,9 @@ export default class command extends BaseCommand {
         if (info.about?.custom) bio = info.about.bio as string
         const text = `🏮 *Username:* ${username}#${info.tag}\n\n♧︎︎︎ *Bio:* ${bio}\n\n𓀬 *Experience:* ${
             info.experience || 0
-        }\n\n🏅 *Rank:* ${rank}\n\n❥︎ *Haigusha:* ${haigusha}\n\nꕥ *Companion:* ${this.client.utils.capitalize(
+        }\n\n🏅 *Rank:* ${rank}\n\nꕥ *Companion:* ${this.client.utils.capitalize(
             info.companion
-        )}\n\n✿︎ *Total Pokemon:* ${info.party.length + info.pc.length}\n\n♔︎ *Quiz Wins:* ${
+        )}\n\n♔︎ *Quiz Wins:* ${
             info.quizWins
         }\n\n👑 *Admin:* ${admin}\n\n⚠︎ *Banned:* ${ban || 'False'}\n\nꕥ 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃`
         return void (await reply(pfp, type, type === 'video' ? true : undefined, undefined, text))
