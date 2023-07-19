@@ -214,7 +214,6 @@ type Events = {
     open: () => void
     pokemon_levelled_up: (data: {
         M: Message
-        pokemon: Pokemon
         inBattle: boolean
         player: 'player1' | 'player2'
         user: string
