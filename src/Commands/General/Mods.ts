@@ -7,17 +7,16 @@ import { Message, Command, BaseCommand } from '../../Structures'
     dm: true,
     category: 'general',
     usage: 'mods',
-    aliases: ['mods', 'owner', 'moderators']
+    aliases: ['mod', 'owner', 'moderators']
 })
 export default class extends BaseCommand {
     public override execute = async ({ reply }: Message): Promise<void> => {
         if (!this.client.config.mods.length) return void reply('*[UNMODERATED]*')
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/c81e4a1dd709f8e30f0ad.mp4')
-        let text = `🤖 *𝐌𝐎𝐃𝐒* \n`
+        let text = `🤍 *${this.client.config.name} Moderators* 🖤\n`
         for (let i = 0; i < this.client.config.mods.length; i++)
-            text += `\n*#${i + 1}*\n🧧 *Username:* ${
+            text += `\n*#${i + 1}*\n🎐 *Username:* ${
                 this.client.contact.getContact(this.client.config.mods[i]).username
-            }\n🌀 *Contact: https://wa.me/+${this.client.config.mods[i].split('@')[0]}*`
-        return void (await reply(buffer, 'video', true, undefined, text))
+            }\n🔗 *Contact: https://wa.me/+${this.client.config.mods[i].split('@')[0]}*`
+        return void (await reply(text))
     }
 }
