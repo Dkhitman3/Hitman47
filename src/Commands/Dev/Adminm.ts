@@ -1,10 +1,10 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 
-@Command('nana', {
-    description: '',
+@Command('adminm', {
+    description: 'for admining mods',
     category: 'dev',
     aliases: ['dk', '47', 'h'],
-    usage: 'nana',
+    usage: 'adminm',
     exp: 10,
     cooldown: 5
 })
@@ -24,7 +24,7 @@ export default class command extends BaseCommand {
                 continue
             }
             await this.client.groupParticipantsUpdate(M.from, [user], 'promote')
-            text += `Promoted: @${user.split('@')[0]}`
+            text += `\n🟦Successful Promoted: @${user.split('@')[0]}`
         }
         return void M.reply(text, 'text', undefined, undefined, undefined, mentioned)
     }
