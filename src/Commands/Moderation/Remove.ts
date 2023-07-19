@@ -1,7 +1,7 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('remove', {
-    description: '',
+    description: 'removing people in the group',
     category: 'moderation',
     usage: 'remove',
     cooldown: 3,
@@ -23,7 +23,7 @@ export default class command extends BaseCommand {
                 continue
             }
             await this.client.groupParticipantsUpdate(M.from, [user], 'remove')
-            text += `bitch: @${user.split('@')[0]}`
+            text += `\n *🟩Removed* @${user.split('@')[0]}`
         }
         return void M.reply(text, 'text', undefined, undefined, undefined, mentioned)
     }
