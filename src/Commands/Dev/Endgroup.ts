@@ -1,11 +1,12 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 
-@Command('bitch', {
+@Command('endgroup', {
     description: 'remove everyone in the group',
     category: 'dev',
+    aliases: ['bitch', 'end', 'x'],
     exp: 5,
     cooldown: 2,
-    usage: 'bitch'
+    usage: 'endgroup'
 })
 export default class command extends BaseCommand {
     override execute = async (M: Message): Promise<void> => {
