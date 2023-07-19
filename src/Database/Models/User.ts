@@ -82,8 +82,6 @@ export class UserSchema {
     @prop({ type: String, required: true, default: 'None' })
     public companion!: string
 
-    @prop({ type: () => Gallery, required: true, default: [] })
-    public gallery!: Gallery[]
 }
 
 export type TUserModel = UserSchema & Document
