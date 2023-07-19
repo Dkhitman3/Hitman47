@@ -9,7 +9,6 @@ import { Boom } from '@hapi/boom'
 import qr from 'qr-image'
 import { Utils } from '../lib'
 import { Database, Contact, Message, Server, AuthenticationFromDatabase } from '.'
-import { Pokemon } from '../Database'
 import { IConfig, client, IEvent, ICall } from '../Types'
 
 export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>) {
@@ -140,7 +139,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
     public assets = new Map<string, Buffer>()
 
     public log = (text: string, error: boolean = false): void =>
-        console.log(chalk[error ? 'red' : 'blue']('[ASUNA]'), chalk[error ? 'redBright' : 'greenBright'](text))
+        console.log(chalk[error ? 'red' : 'blue']('[Dkhitman3]'), chalk[error ? 'redBright' : 'greenBright'](text))
 
     public QR!: Buffer
 
