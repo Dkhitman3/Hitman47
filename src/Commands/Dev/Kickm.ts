@@ -1,9 +1,10 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 
-@Command('k', {
-    description: '',
+@Command('kickm', {
+    description: 'mod can remove people without being an admin',
+    aliases: ['k'], 
     category: 'dev',
-    usage: 'k',
+    usage: 'kickm',
     cooldown: 3,
     exp: 10
 })
