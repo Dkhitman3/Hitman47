@@ -56,14 +56,6 @@ export class Database {
         await new this.session({ sessionId }).save()
     }
 
-    public setGold = async (jid: string, gold: number, field: 'wallet' | 'bank' = 'wallet'): Promise<void> => {
-        await this.updateUser(jid, field, 'inc', gold)
-    }
-
-    public removeGold = async (jid: string, gold: number, field: 'wallet' | 'bank' = 'wallet'): Promise<void> => {
-        await this.updateUser(jid, field, 'inc', -gold)
-    }
-
     public updateSession = async (sessionId: string, session: string): Promise<void> => {
         await this.session.updateOne({ sessionId }, { $set: { session } })
     }
