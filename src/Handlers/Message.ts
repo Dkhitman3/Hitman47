@@ -9,17 +9,12 @@ import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
 import { getStats } from '../lib'
 import axios from 'axios'
-import { ICommand, IArgs, IPokemonAPIResponse } from '../Types'
-import { Pokemon } from '../Database'
+import { ICommand, IArgs } from '../Types'
 
 export class MessageHandler {
     constructor(private client: Client) {}
 
     public groups!: string[]
-
-    public wild: string[] = []
-
-    public chara: string[] = []
 
     public chess = {
         games: new Map<string, Game | undefined>(),
@@ -218,16 +213,6 @@ export class MessageHandler {
     private cooldowns = new Map<string, number>()
 
     private path = [__dirname, '..', 'Commands']
-
-    public pokemonResponse = new Map<string, Pokemon>()
-
-    public pokemonTradeResponse = new Map<string, { offer: Pokemon; creator: string; with: string }>()
-
-    public charaResponse = new Map<string, { price: number; data: WaifuResponse }>()
-
-    public haigushaResponse = new Map<string, WaifuResponse>()
-
-    private genders = ['female', 'male']
 
     public quiz = {
         game: new Map<string, { answer: string; options: string[] }>(),
