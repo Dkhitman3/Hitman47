@@ -17,7 +17,7 @@ export default class extends BaseCommand {
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
-            })).filter((command) => command.data.config.category !== 'dev')
+            })).filter((command) => command.data.config.category !== 'chara')
             const { nsfw } = await this.client.DB.getGroup(M.from)
             if (!nsfw) commands = commands.filter(({ data }) => data.config.category !== 'nsfw')
             let text = `💫 *@${M.sender.jid.split('@')[0]}*, *prefix is* "${
