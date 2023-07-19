@@ -92,18 +92,17 @@ export class MessageHandler {
             )
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
         if (command.config.adminRequired && !isAdmin) return void M.reply('I need to be an admin to use this command')
-        const { nsfw } = await this.client.DB.getGroup(M.from)
-        if (command.config.category === 'nsfw' && !nsfw)
-            return void M.reply('This command can only be used in NSFW enabled groups')
+        if (command.config.category === 'nsfw' && !(await this.client.DB.getGroup(M.from)).nsfw)
+            return void M.reply("*Don't be a pervert, Bitch! This comand can only be used in NSFW enabled groups*")
         const cooldownAmount = (command.config.cooldown ?? 3) * 1000
         const time = cooldownAmount + Date.now()
         if (this.cooldowns.has(`${M.sender.jid}${command.name}`)) {
             const cd = this.cooldowns.get(`${M.sender.jid}${command.name}`)
             const remainingTime = this.client.utils.convertMs((cd as number) - Date.now())
             return void M.reply(
-                `*You are on a free mode Wait *${remainingTime}* ${
-                    remainingTime > 1 ? 'seconds' : 'second'
-                } *before using this command again*`
+                `Woahh!⏳ Slow down. You can use this command again in *${remainingTime}* ${
+                  remainingTime > 1 ? 'seconds' : 'second'
+                }` 
             )
         } else this.cooldowns.set(`${M.sender.jid}${command.name}`, time)
         setTimeout(() => this.cooldowns.delete(`${M.sender.jid}${command.name}`), cooldownAmount)
