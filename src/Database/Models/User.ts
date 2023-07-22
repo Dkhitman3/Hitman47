@@ -91,6 +91,9 @@ export class UserSchema {
     @prop({ type: () => Icon, required: true, default: () => ({ custom: false }) })
     public icon!: Icon
 
+    @prop({ type: Number, required: true, default: 0 })
+    public wallet!: number
+
     @prop({ type: () => About, required: true, default: () => ({ custom: false }) })
     public about!: About
 
