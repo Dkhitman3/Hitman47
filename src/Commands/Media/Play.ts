@@ -4,7 +4,7 @@ import { IArgs, YT_Search } from '../../Types'
 
 @Command('play', {
     description: 'Plays a song of the given term from YouTube',
-    cooldown: 250,
+    cooldown: 200,
     aliases: ['song', 'download', 'music'],
     exp: 35,
     category: 'media',
@@ -14,6 +14,8 @@ export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) return void M.reply('Provide a term to play, Baka!')
         const term = context.trim()
+        const { wallet } = await this.client.DB.getUser(M.sender.jid)
+        if (3000 > wallet) return void M.reply('*🟦you need 3000 gold in your wallet to use this command type ${this.client.config.prefix}support to join Casino group to get more gold/type ${this.client.config.prefix}daily to claim your daily gold🟦*')
         const videos = await this.client.utils.fetch<YT_Search[]>(`https://weeb-api.vercel.app/ytsearch?query=${term}`)
         if (!videos || !videos.length) return void M.reply(`No matching songs found | *"${term}"*`)
         const buffer = await new YT(videos[0].url, 'audio').download()
@@ -26,3 +28,4 @@ export default class extends BaseCommand {
         }))
     }
 }
+            
