@@ -7,6 +7,7 @@ import axios from 'axios'
     aliases: ['bot'],
     category: 'chatbot',
     usage: `bot`,
+    dm: true,
     cooldown: 5,
     exp: 30,
     dm: false
