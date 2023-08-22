@@ -21,10 +21,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             session: process.env.SESSION || 'SESSION',
             prefix: process.env.PREFIX || ':',
             mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
-            casinoGroup: '120363063796106542@g.us',
             gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
-            adminsGroup: '120363143762406410@g.us',
-            supportGroups: ['120363161299921264@g.us', '120363063796106542@g.us'],
             chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
             PORT: Number(process.env.PORT || 3000)
         }
