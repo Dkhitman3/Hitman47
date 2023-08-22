@@ -36,3 +36,4 @@ interface ICommandConfig {
 
 export type TCategory =
     | 'chatbot'
+    |  'dev'
