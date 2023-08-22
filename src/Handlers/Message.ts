@@ -53,7 +53,7 @@ export class MessageHandler {
         )
         const { bot } = await this.client.DB.getGroup(M.from)
         const commands = ['switch', 'hello', 'hi']
-        const { ban, tag, inventory, companion } = await this.client.DB.getUser(M.sender.jid)
+        const { ban, tag } = await this.client.DB.getUser(M.sender.jid)
         if (ban.banned) return void M.reply(
             `You are banned from using commands. Banned by *${ban.bannedBy}* at *${ban.bannedIn}* in *${ban.time} (GMT)*. ❓ Reason: *${ban.reason}*`
             )
@@ -74,9 +74,6 @@ export class MessageHandler {
             return void M.reply('This command can only be used by the MODS')
         if (M.chat === 'dm' && !command.config.dm) return void M.reply('This command can only be used in groups')
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
-        if (command.config.adminRequired && !isAdmin) return void M.reply('I need to be an admin to use this command')
-        if (command.config.category === 'nsfw' && !(await this.client.DB.getGroup(M.from)).nsfw)
-            return void M.reply("*Don't be a pervert, Bitch! This comand can only be used in NSFW enabled groups*")
         const cooldownAmount = (command.config.cooldown ?? 3) * 1000
         const time = cooldownAmount + Date.now()
         if (this.cooldowns.has(`${M.sender.jid}${command.name}`)) {
