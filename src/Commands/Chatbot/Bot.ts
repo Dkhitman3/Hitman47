@@ -5,7 +5,7 @@ import axios from 'axios'
 @Command('bot', {
     description: 'chat with the bot .',
     aliases: ['bot'],
-    category: 'dev',
+    category: 'chatbot',
     usage: `bot`,
     dm: true,
     cooldown: 5,
