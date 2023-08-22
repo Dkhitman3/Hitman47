@@ -16,9 +16,9 @@ export default class extends BaseCommand {
                 command,
                 data
             })).filter((command) => command.data.config.category !== 'dev')
-            let text = `👋🏻! *@${M.sender.jid.split('@')[0]}*, I'm ${
+            let text = `🤖! *@${M.sender.jid.split('@')[0]}*, I'm ${
                 this.client.config.name
-            }\nMy prefix is - "${this.client.config.prefix}"\n\nThe usable commands are listed below.`
+            }\nMy prefix is - "${this.client.config.prefix}"\n\n🧧.`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
@@ -31,7 +31,7 @@ export default class extends BaseCommand {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📕 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*`
+            text += `\n\n📕 *📚*`
             return void (await M.reply(text, 'text', undefined, undefined, undefined, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
