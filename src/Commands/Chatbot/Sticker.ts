@@ -5,7 +5,7 @@ import { IArgs } from '../../Types'
 
 @Command('sticker', {
     description: 'Converts image/video/gif to sticker',
-    category: 'utils',
+    category: 'dev',
     exp: 15,
     dm: true,
     cooldown: 10,
