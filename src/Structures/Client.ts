@@ -20,7 +20,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             name: 'chatbot',
             session: 'dk#',
             prefix: '*',
-            mods: '27844132352',
+            mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
             gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
             chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
             PORT: Number(process.env.PORT || 3000)
