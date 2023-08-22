@@ -7,7 +7,7 @@ import { IArgs } from '../../Types'
     cooldown: 10,
     exp: 20,
     usage: 'help || help <command_name>',
-    category: 'general'
+    category: 'dev'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
