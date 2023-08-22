@@ -18,9 +18,9 @@ export default class extends BaseCommand {
                 command,
                 data
             })).filter((command) => command.data.config.category !== 'dev')
-            let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, my names is ${
+            let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, *my name is ${
                 this.client.config.name
-            }\nprefix is - "${this.client.config.prefix}"\n\n`
+            }*`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
@@ -33,7 +33,8 @@ export default class extends BaseCommand {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📕`
+            text += `\n
+*➪ ❚❚ ↻ 𝗵𝗶𝘁𝗺𝗮𝗻47 ©️ 2025*`
             return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
