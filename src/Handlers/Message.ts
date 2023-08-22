@@ -72,7 +72,6 @@ export class MessageHandler {
             )
         if (command.config.category === 'dev' && !this.client.config.mods.includes(M.sender.jid))
             return void M.reply('This command can only be used by the MODS')
-        if (M.chat === 'dm' && !command.config.dm) return void M.reply('This command can only be used in groups')
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
         const cooldownAmount = (command.config.cooldown ?? 3) * 1000
         const time = cooldownAmount + Date.now()
