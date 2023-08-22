@@ -5,7 +5,7 @@ import axios from 'axios'
 @Command('google', {
     aliases: ['g', 'search'],
     description: 'Search on the web ',
-    category: 'chatbot',
+    category: 'dev',
     usage: 'google [query]',
     exp: 10,
     dm: true
