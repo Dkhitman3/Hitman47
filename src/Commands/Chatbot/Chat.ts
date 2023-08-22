@@ -5,6 +5,7 @@ import { IArgs } from '../../Types'
     description: 'Chat with the Bot in group.',
     category: 'chatbot',
     usage: 'chat hi',
+    dm: true,
     aliases: ['love'],
     exp: 15,
     cooldown: 3
