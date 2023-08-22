@@ -9,6 +9,8 @@ import axios from 'axios'
 export class MessageHandler {
     constructor(private client: Client) {}
 
+    public groups!: string[]
+
     public handleMessage = async (M: Message): Promise<void> => {
         const { prefix } = this.client.config
         const args = M.content.split(' ')
