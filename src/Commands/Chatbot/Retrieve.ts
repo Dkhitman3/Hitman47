@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('retrieve', {
     description: 'Retrieves view once message',
-    category: 'dev',
+    category: 'chatbot',
     usage: 'retrieve [quote view once message]',
     cooldown: 10,
     aliases: ['re'],
