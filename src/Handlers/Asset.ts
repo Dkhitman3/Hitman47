@@ -26,3 +26,4 @@ export class AssetHandler {
 
     private path = [__dirname, '..', '..', 'assets']
 }
+                    
