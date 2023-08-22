@@ -9,8 +9,7 @@ import axios from 'axios'
     usage: `bot`,
     dm: true,
     cooldown: 5,
-    exp: 30,
-    dm: false
+    exp: 30
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
