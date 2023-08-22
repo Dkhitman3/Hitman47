@@ -1,6 +1,7 @@
 import { join } from 'path'
 import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
+import { getStats } from '../lib'
 import { Message, Client, BaseCommand } from '../Structures'
 import { ICommand, IArgs } from '../Types'
 import axios from 'axios'
