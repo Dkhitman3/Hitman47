@@ -30,25 +30,9 @@ interface ICommandConfig {
     dm?: boolean
     /**Cooldown of the command */
     cooldown?: number
-    casino?: boolean
-    adminRequired?: boolean
     antiBattle?: boolean
     antiTrade?: boolean
 }
 
 export type TCategory =
-    | 'dev'
-    | 'fun'
-    | 'games'
-    | 'nsfw'
-    | 'casino'
-    | 'cards'
-    | 'bot'
-    | 'utils'
-    | 'pokemon'
-    | 'moderation'
-    | 'weeb'
-    | 'general'
-    | 'media'
-    | 'economy'
-    | 'characters'
+    | 'chatbot'
