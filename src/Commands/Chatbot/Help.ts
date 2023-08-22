@@ -17,7 +17,7 @@ export default class extends BaseCommand {
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
-            })).filter((command) => command.data.config.category !== 'dev')
+            })).filter((command) => command.data.config.category !== 'chatbot')
             let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, *my name is ${
                 this.client.config.name
             }*`
