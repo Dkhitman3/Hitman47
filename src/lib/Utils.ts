@@ -2,15 +2,12 @@ import axios from 'axios'
 import { tmpdir } from 'os'
 import { promisify } from 'util'
 import { exec } from 'child_process'
-import { readFile, readdirSync, unlink, writeFile } from 'fs-extra'
+import { readFile, unlink, writeFile } from 'fs-extra'
 const { uploadByBuffer } = require('telegraph-uploader')
 import FormData from 'form-data'
-import Canvas from 'canvas'
 import { load } from 'cheerio'
 import regex from 'emoji-regex'
 import * as linkify from 'linkifyjs'
-import { MessageHandler } from '../Handlers'
-import { Client } from '../Structures'
 
 export class Utils {
     public generateRandomHex = (): string => `#${(~~(Math.random() * (1 << 24))).toString(16)}`
@@ -23,63 +20,6 @@ export class Utils {
         max = Math.pow(10, n + 1)
         const min = max / 10
         return (Math.floor(Math.random() * (max - min + 1)) + min).toString().substring(1)
-    }
-
-    public getRandomInt = (min: number, max: number): number => {
-        return Math.floor(Math.random() * (max - min + 1)) + min
-    }
-
-    public getHangman = (state: number = 0): Buffer => {
-        const createLine = (
-            ctx: Canvas.CanvasRenderingContext2D,
-            fromX: number,
-            fromY: number,
-            toX: number,
-            toY: number,
-            color: string = '#000000'
-        ) => {
-            ctx.beginPath()
-            ctx.strokeStyle = color
-            ctx.moveTo(fromX, fromY)
-            ctx.lineTo(toX, toY)
-            ctx.stroke()
-            ctx.closePath()
-        }
-        const canvas = Canvas.createCanvas(300, 350)
-        const ctx = canvas.getContext('2d')
-        ctx.lineWidth = 5
-        createLine(ctx, 50, 330, 150, 330)
-        createLine(ctx, 100, 330, 100, 50)
-        createLine(ctx, 100, 50, 200, 50)
-        createLine(ctx, 200, 50, 200, 80)
-        if (state >= 1) {
-            ctx.strokeStyle = '#000000'
-            ctx.beginPath()
-            ctx.arc(200, 100, 20, 0, 2 * Math.PI)
-            ctx.stroke()
-            ctx.closePath()
-        }
-        if (state >= 2) createLine(ctx, 200, 120, 200, 200, '#000000')
-        if (state >= 3) createLine(ctx, 200, 150, 170, 130, state < 3 ? '#a3a3a3' : '#000000')
-        if (state >= 4) createLine(ctx, 200, 150, 230, 130, state < 4 ? '#a3a3a3' : '#000000')
-        if (state >= 5) createLine(ctx, 200, 200, 180, 230, state < 5 ? '#a3a3a3' : '#000000')
-        if (state >= 6) createLine(ctx, 200, 200, 220, 230, state < 6 ? '#a3a3a3' : '#000000')
-        return canvas.toBuffer()
-    }
-
-    public getRepeatedWords = (str: string): { [K: string]: number } => {
-        let tmp: { [K: string]: number } = {}
-        let c!: string
-        for (let i = str.length - 1; i >= 0; i--) {
-            c = str.charAt(i)
-            if (c in tmp) tmp[c] += 1
-            else tmp[c] = 1
-        }
-        let result: { [K: string]: number } = {}
-        for (c in tmp) {
-            if (tmp.hasOwnProperty(c) && tmp[c] > 1) result[c] = tmp[c]
-        }
-        return result
     }
 
     public extractNumbers = (content: string): number[] => {
@@ -95,20 +35,6 @@ export class Utils {
             arr.push(url.value)
         }
         return arr
-    }
-
-    public superFetch = async (url: string): Promise<string> =>
-        await this.fetch<string>(`https://web-production-418e.up.railway.app/raw?url=${url}`)
-
-    public getRandomFile = (dir: string): string => {
-        let document: string = ''
-        try {
-            const result = readdirSync(dir)
-            document = result[Math.floor(Math.random() * result.length)].split(/\.(?=[^\.]+$)/)[0]
-        } catch {
-            document = '404'
-        }
-        return document
     }
 
     public extractEmojis = (content: string): string[] => content.match(regex()) || []
@@ -200,54 +126,5 @@ export class Utils {
         ).data
 
     public exec = promisify(exec)
-
-    public chunk = <T>(arr: T[], length: number): T[][] => {
-        const result = []
-        for (let i = 0; i < arr.length / length; i++) result.push(arr.slice(i * length, i * length + length))
-        return result
-    }
-
-    public parseChessBoard = (board: string[]): string[][] =>
-        this.chunk(
-            board.map((tile) => {
-                if (tile === 'bK') return 'k'
-                if (tile === 'wK') return 'K'
-                if (tile === 'wk') return 'N'
-                if (tile === 'bk') return 'n'
-                if (tile[0] === 'w') return tile[1].toUpperCase()
-                return tile[1].toLowerCase()
-            }),
-            8
-        ).reverse()
-
-    public endChess = async (
-        handler: MessageHandler,
-        client: Client,
-        jid: string,
-        winner?: 'Black' | 'White' | string
-    ): Promise<void> => {
-        const game = handler.chess.games.get(jid)
-        const challenge = handler.chess.challenges.get(jid)
-        if (!game || !challenge) return void null
-        const w = winner?.endsWith('.net')
-            ? winner
-            : winner === 'White'
-            ? challenge.challenger
-            : winner === 'Black'
-            ? challenge.challengee
-            : null
-        handler.chess.challenges.set(jid, undefined)
-        handler.chess.games.set(jid, undefined)
-        handler.chess.ongoing.delete(jid)
-        if (!w)
-            return void (await client.sendMessage(jid, {
-                text: 'Match ended in a Draw!'
-            }))
-        await client.DB.setExp(w, 1500)
-        if (w)
-            return void (await client.sendMessage(jid, {
-                text: `@${w.split('@')[0]} Won`,
-                mentions: [w]
-            }))
-    }
 }
+    
