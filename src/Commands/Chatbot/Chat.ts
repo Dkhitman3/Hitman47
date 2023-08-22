@@ -3,7 +3,7 @@ import { IArgs } from '../../Types'
 
 @Command('chat', {
     description: 'Chat with the Bot in group.',
-    category: 'fun',
+    category: 'chatbot',
     usage: 'chat hi',
     aliases: ['love'],
     exp: 15,
