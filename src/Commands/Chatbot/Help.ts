@@ -12,7 +12,7 @@ import { IArgs } from '../../Types'
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) {
-            const image = this.client.utils.getRandomFile('./assets/dreddimg')
+            const image = this.client.utils.getRandomFile('./assets/dkimg')
             const buffer = (await this.client.assets.get(image)) as Buffer
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
@@ -20,7 +20,7 @@ export default class extends BaseCommand {
             })).filter((command) => command.data.config.category !== 'dev')
             let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, my names is ${
                 this.client.config.name
-            }\nMy prefix is - "${this.client.config.prefix}"\n\n`
+            }\nprefix is - "${this.client.config.prefix}"\n\n`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
