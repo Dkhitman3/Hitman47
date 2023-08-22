@@ -7,18 +7,20 @@ import { IArgs } from '../../Types'
     cooldown: 10,
     exp: 20,
     usage: 'help || help <command_name>',
-    category: 'dev'
+    category: 'general'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) {
+            const image = this.client.utils.getRandomFile('./assets/dreddimg')
+            const buffer = (await this.client.assets.get(image)) as Buffer
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
             })).filter((command) => command.data.config.category !== 'dev')
-            let text = `🤖! *@${M.sender.jid.split('@')[0]}*, I'm ${
+            let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, my names is ${
                 this.client.config.name
-            }\nMy prefix is - "${this.client.config.prefix}"\n\n🧧.`
+            }\nMy prefix is - "${this.client.config.prefix}"\n\n`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
@@ -31,8 +33,8 @@ export default class extends BaseCommand {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📕 *📚*`
-            return void (await M.reply(text, 'text', undefined, undefined, undefined, [M.sender.jid]))
+            text += `\n\n📕`
+            return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
             const command = this.handler.commands.get(cmd) || this.handler.aliases.get(cmd)
@@ -51,4 +53,5 @@ export default class extends BaseCommand {
             )
         }
     }
-}
+                    }
+                                 
