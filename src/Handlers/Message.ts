@@ -1,27 +1,14 @@
 import { join } from 'path'
 import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
-import { schedule } from 'node-cron'
-import Game from 'chess-node'
-import { ICharacter as WaifuResponse, Character } from '@shineiichijo/marika'
-import { AnyMessageContent, proto, delay } from '@whiskeysockets/baileys'
-import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
 import { getStats } from '../lib'
-import axios from 'axios'
 import { ICommand, IArgs } from '../Types'
+import axios from 'axios'
 
 export class MessageHandler {
     constructor(private client: Client) {}
 
-    public groups!: string[]
-
-    public chess = {
-        games: new Map<string, Game | undefined>(),
-        challenges: new Map<string, { challenger: string; challengee: string } | undefined>(),
-        ongoing: new Set<string>()
-    }
-    
     public handleMessage = async (M: Message): Promise<void> => {
         const { prefix } = this.client.config
         const args = M.content.split(' ')
@@ -84,12 +71,6 @@ export class MessageHandler {
         if (command.config.category === 'dev' && !this.client.config.mods.includes(M.sender.jid))
             return void M.reply('This command can only be used by the MODS')
         if (M.chat === 'dm' && !command.config.dm) return void M.reply('This command can only be used in groups')
-        if (command.config.category === 'moderation' && !M.sender.isAdmin)
-            return void M.reply('This command can only be used by the group admins')
-        if (command.config.casino && M.from !== this.client.config.casinoGroup)
-            return void M.reply(
-                `*This command can only be used in the casino group. Use ${this.client.config.prefix}support to get the casino group link*`
-            )
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
         if (command.config.adminRequired && !isAdmin) return void M.reply('I need to be an admin to use this command')
         if (command.config.category === 'nsfw' && !(await this.client.DB.getGroup(M.from)).nsfw)
@@ -116,34 +97,11 @@ export class MessageHandler {
     }
 
     private moderate = async (M: Message): Promise<void> => {
-        if (M.chat !== 'group') {
-            const urls = M.urls
-            if (!urls.length) return void null
-            const groupinvites = urls.filter((url) => url.includes('chat.whatsapp.com'))
-            if (!groupinvites.length) return void null
-            this.client.log(
-                `${chalk.blueBright('GROUP REQUEST')} from ${chalk.yellowBright(
-                    M.sender.username
-                )} in ${chalk.cyanBright('DM')}`
-            )
-            const text = `*━━━❰ GROUP REQUEST ❱━━━*\n\n*🚀Request:* from *@${
-                M.sender.jid.split('@')[0]
-            }*\n\n*📃Message:* ${M.content}`
-            if (M.message.key.fromMe) return void null
-            await this.client.sendMessage(this.client.config.adminsGroup, {
-                text,
-                mentions: [M.sender.jid]
-            })
-            return void M.reply('Your request has been sent🎉')
-        }
+        if (M.chat !== 'group') return void null
         const { mods } = await this.client.DB.getGroup(M.from)
-        if (
-            !mods ||
-            M.sender.isAdmin ||
-            !M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
-        )
-            return void null
-        const urls = M.urls
+        const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
+        if (!mods || M.sender.isAdmin || !isAdmin) return void null
+        const urls = this.client.utils.extractUrls(M.content)
         if (urls.length > 0) {
             const groupinvites = urls.filter((url) => url.includes('chat.whatsapp.com'))
             if (groupinvites.length > 0) {
@@ -151,11 +109,10 @@ export class MessageHandler {
                     const code = await this.client.groupInviteCode(M.from)
                     const inviteSplit = invite.split('/')
                     if (inviteSplit[inviteSplit.length - 1] !== code) {
-                        const title = M.groupMetadata?.subject || 'Group'
                         this.client.log(
                             `${chalk.blueBright('MOD')} ${chalk.green('Group Invite')} by ${chalk.yellow(
                                 M.sender.username
-                            )} in ${chalk.cyanBright(title)}`
+                            )} in ${chalk.cyanBright(M.groupMetadata?.subject || 'Group')}`
                         )
                         return void (await this.client.groupParticipantsUpdate(M.from, [M.sender.jid], 'remove'))
                     }
@@ -214,12 +171,4 @@ export class MessageHandler {
     private cooldowns = new Map<string, number>()
 
     private path = [__dirname, '..', 'Commands']
-
-    public quiz = {
-        game: new Map<string, { answer: string; options: string[] }>(),
-        timer: new Map<string, { id: NodeJS.Timer }>(),
-        board: new Map<string, { players: { jid: string; points: number }[] }>(),
-        answered: new Map<string, { players: string[] }>(),
-        forfeitable: new Map<string, boolean>()
-    }
 }
