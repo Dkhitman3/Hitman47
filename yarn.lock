@@ -1362,14 +1362,6 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-anime-quiz@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/anime-quiz/-/anime-quiz-3.0.0.tgz#4a1c5dcb091498d6d3e74b78d4cf06ef5df677bf"
-  integrity sha512-ANQXM0tZIw+DeOYjp0yv34eQ+5LmMeAaNCR42Lq1yJc1wofzWPTNePSvee4sSQ6w8QAdawc170jEsQXh0plPiA==
-  dependencies:
-    fs-extra "^10.1.0"
-    path "^0.12.7"
-
 ansi-regex@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
@@ -1791,27 +1783,6 @@ cheerio@^1.0.0-rc.10, cheerio@^1.0.0-rc.12:
     htmlparser2 "^8.0.1"
     parse5 "^7.0.0"
     parse5-htmlparser2-tree-adapter "^7.0.0"
-
-chess-image-generator-ts@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/chess-image-generator-ts/-/chess-image-generator-ts-1.0.0.tgz#e9eb9a69e0d13a6f09c65a9e5c0f39bd5c73102b"
-  integrity sha512-APEiqVkTnGB7dY3fVinI9u1Ip7qL/PcF10XJLptQ0y8HCivI6N7+HLaFGE0rEE2mIztphEfkNSm74hcvrBRhDA==
-  dependencies:
-    canvas "^2.6.1"
-    canvas-to-buffer "^1.1.0"
-    chess.js "^0.10.2"
-    fs "0.0.1-security"
-    path "^0.12.7"
-
-chess-node@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/chess-node/-/chess-node-1.1.0.tgz#e809e76a5fc79682e133072fd17028f24ec3443e"
-  integrity sha512-icuevkbv0OdgDkHPItHW0Si5R3e+SmuzT2fM4+GOavLJOv9tEhc6jX4NoFy4yIcqUzf2eplkRb3a5Z+p1aa+1w==
-
-chess.js@^0.10.2:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/chess.js/-/chess.js-0.10.3.tgz#8c3b98e8411c2ff3ab4b1fc022ddebd1ae037120"
-  integrity sha512-i51JgVM0ksFMbLJYKoDpfrcFxJHq/XQQx8NltCdfMyDv7vpU5JVzsZz1EOw7nA27eGA5t8tSxodAN+Wc704BoQ==
 
 chownr@^1.1.1:
   version "1.1.4"
