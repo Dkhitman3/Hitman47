@@ -1,4 +1,4 @@
-import { Contact } from '@whiskeysockets/baileys'
+import { Contact } from '@adiwajshing/baileys'
 import {
     userSchema,
     groupSchema,
@@ -14,7 +14,6 @@ import {
     UserSchema,
     GroupSchema
 } from '../Database'
-import moment from 'moment-timezone'
 import { Utils } from '../lib'
 
 export class Database {
@@ -41,44 +40,11 @@ export class Database {
         await this.user.updateOne({ jid }, { [`$${method}`]: { [field]: update } })
     }
 
-    public banUser = async (jid: string, bannedBy: string, bannedIn: string, reason: string) => {
-        await this.getUser(jid)
-        const time = moment.tz('Etc/GMT').format('MMM D, YYYY HH:mm:ss')
-        await this.user.updateOne(
-            { jid },
-            {
-                $set: {
-                    'ban.banned': true,
-                    'ban.bannedBy': bannedBy,
-                    'ban.bannedIn': bannedIn,
-                    'ban.time': time,
-                    'ban.reason': reason
-                }
-            }
-        )
-    }
-
-    public unbanUser = async (jid: string) => {
-        await this.user.updateOne(
-            { jid },
-            {
-                $set: { 'ban.banned': false },
-                $unset: {
-                    'ban.bannedBy': '',
-                    'ban.bannedIn': '',
-                    'ban.time': '',
-                    'ban.reason': ''
-                }
-            }
-        )
-     }
-
     public getGroup = async (jid: string): Promise<TGroupModel> =>
         (await this.group.findOne({ jid })) || (await new this.group({ jid }).save())
 
-    public updateGroup = async (jid: string, field: keyof GroupSchema, update: boolean | string): Promise<void> => {
-        const x = await this.getGroup(jid)
-        x[field as 'bot'] = update as string
+    public updateGroup = async (jid: string, field: keyof GroupSchema, update: boolean): Promise<void> => {
+        await this.getGroup(jid)
         await this.group.updateOne({ jid }, { $set: { [field]: update } })
     }
 
@@ -141,3 +107,4 @@ export class Database {
 }
 
 type valueof<T> = T[keyof T]
+                             
