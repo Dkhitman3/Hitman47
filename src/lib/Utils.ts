@@ -2,7 +2,7 @@ import axios from 'axios'
 import { tmpdir } from 'os'
 import { promisify } from 'util'
 import { exec } from 'child_process'
-import { readFile, unlink, writeFile } from 'fs-extra'
+import { readFile, readdirSync, unlink, writeFile } from 'fs-extra'
 const { uploadByBuffer } = require('telegraph-uploader')
 import FormData from 'form-data'
 import { load } from 'cheerio'
@@ -26,6 +26,17 @@ export class Utils {
         const search = content.match(/(-\d+|\d+)/g)
         if (search !== null) return search.map((string) => parseInt(string))
         return []
+    }
+
+    public getRandomFile = (dir: string): string => {
+        let document: string = ''
+        try {
+            const result = readdirSync(dir)
+            document = result[Math.floor(Math.random() * result.length)].split(/\.(?=[^\.]+$)/)[0]
+        } catch {
+            document = '404'
+        }
+        return document
     }
 
     public extractUrls = (content: string): string[] => {
