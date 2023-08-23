@@ -6,6 +6,7 @@ import { createCanvas, loadImage, CanvasRenderingContext2D } from 'canvas'
     description: 'Recreates the thug life meme',
     category: 'chatbot',
     exp: 30,
+    dm: true,
     aliases: ['th'],
     cooldown: 25,
     usage: 'thug-life [tag/quote users]'
