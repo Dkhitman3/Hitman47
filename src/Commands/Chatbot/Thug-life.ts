@@ -42,11 +42,6 @@ export default class command extends BaseCommand {
         }
         const base = await loadImage(this.client.assets.get('thug-life') as Buffer)
         const data = await loadImage(buffer)
-        const amount = 500
-        const { wallet } = await this.client.DB.getUser(M.sender.jid)
-        if (amount > wallet)
-            return void M.reply(`🟥 *You need ${amount} coins🪙 in your wallet to use this command*`)
-        await this.client.DB.setGold(M.sender.jid, -amount)
         const canvas = createCanvas(data.width, data.height)
         const ctx = canvas.getContext('2d')
         ctx.drawImage(data, 0, 0)
