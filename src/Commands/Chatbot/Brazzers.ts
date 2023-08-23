@@ -7,6 +7,7 @@ import { createCanvas, loadImage } from 'canvas'
     category: 'chatbot',
     aliases: ['bra'],
     exp: 30,
+    dm: true,
     cooldown: 25,
     usage: 'brazzers [tag/quote users]'
 })
