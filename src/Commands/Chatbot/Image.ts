@@ -7,7 +7,7 @@ import { IArgs } from '../../Types'
     usage: 'image',
     aliases: ['pin', 'photo', 'Pictures'],
     exp: 15,
-    cooldown: 3,
+    cooldown: 10,
     dm: true
 })
 export default class extends BaseCommand {
