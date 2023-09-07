@@ -5,6 +5,7 @@ import { IArgs } from '../../Types'
     description: "Displays the bot's usable commands",
     aliases: ['h'],
     cooldown: 10,
+    dm: true,
     exp: 20,
     usage: 'help || help <command_name>',
     category: 'chatbot'
