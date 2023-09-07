@@ -8,6 +8,7 @@ const reactions = Object.keys(Reactions)
     description: 'React via anime gifs with the tagged or quoted user',
     category: 'chatbot',
     cooldown: 10,
+    dm: true,
     exp: 20,
     usage: 'reaction (reaction) [tag/quote user] || (reaction) [tag/quote user]',
     aliases: ['r', ...reactions]
