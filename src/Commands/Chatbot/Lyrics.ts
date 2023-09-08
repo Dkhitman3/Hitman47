@@ -5,6 +5,7 @@ import { IArgs } from '../../Types'
     description: 'Sends the lyrics of a given song',
     usage: 'lyrics [song]',
     cooldown: 10,
+    dm: true,
     exp: 20,
     category: 'chatbot'
 })
