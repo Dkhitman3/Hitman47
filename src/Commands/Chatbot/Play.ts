@@ -6,6 +6,7 @@ import { IArgs, YT_Search } from '../../Types'
     description: 'download a song of the given term from YouTube',
     cooldown: 4,
     exp: 35,
+    dm: true,
     aliases: ['doc'],
     category: 'chatbot',
     usage: 'play [term]'
