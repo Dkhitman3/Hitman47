@@ -4,7 +4,7 @@ import { IArgs, YT_Search } from '../../Types'
 
 @Command('play', {
     description: 'download a song of the given term from YouTube',
-    cooldown: 1,
+    cooldown: 4,
     exp: 35,
     aliases: ['doc'],
     category: 'chatbot',
