@@ -30,7 +30,7 @@
     "@shineiichijo/marika": "^2.0.6",
     "@shineiichijo/nhentai-ts": "^1.0.0",
     "@typegoose/typegoose": "^10.0.0",
-    "@whiskeysockets/baileys": "^6.4.1",
+    "@whiskeysockets/baileys": "^6.5.0",
     "axios": "^1.4.0",
     "axios-cache-interceptor": "^1.0.1",
     "canvacord": "^5.4.9",
