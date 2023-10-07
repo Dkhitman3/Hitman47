@@ -4,7 +4,7 @@ import { createCanvas, loadImage } from 'canvas'
 
 @Command('brazzers', {
     description: 'Well',
-    category: 'chatbot',
+    category: 'dev',
     aliases: ['bra'],
     exp: 30,
     dm: true,
