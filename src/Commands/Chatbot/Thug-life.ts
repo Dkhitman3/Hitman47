@@ -4,7 +4,7 @@ import { createCanvas, loadImage, CanvasRenderingContext2D } from 'canvas'
 
 @Command('thug-life', {
     description: 'Recreates the thug life meme',
-    category: 'chatbot',
+    category: 'dev',
     exp: 30,
     dm: true,
     aliases: ['th'],
