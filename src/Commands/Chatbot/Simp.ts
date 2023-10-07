@@ -7,7 +7,7 @@ import { Command, BaseCommand, Message } from '../../Structures'
     cooldown: 15,
     aliases: ['si'],
     usage: 'simp [tag/quote user || quote/caption image]',
-    category: 'chatbot',
+    category: 'dev',
     exp: 10
 })
 export default class extends BaseCommand {
