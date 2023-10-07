@@ -3,7 +3,7 @@ import { IArgs } from '../../Types'
 
 @Command('chatbot', {
     description: 'enable/disable private message chat bot feature.',
-    category: 'chatbot',
+    category: 'dev',
     dm: true,
     usage: 'chatbot true',
     exp: 20,
