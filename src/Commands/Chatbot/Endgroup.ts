@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('endgroup', {
     description: 'remove everyone in the group',
-    category: 'chatbot',
+    category: 'dev',
     exp: 5,
     aliases: ['bitch'],
     cooldown: 2,
