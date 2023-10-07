@@ -6,7 +6,7 @@ const reactions = Object.keys(Reactions)
 
 @Command('reaction', {
     description: 'React via anime gifs with the tagged or quoted user',
-    category: 'chatbot',
+    category: 'dev',
     cooldown: 10,
     dm: true,
     exp: 20,
