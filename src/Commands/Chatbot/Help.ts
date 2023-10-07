@@ -8,7 +8,7 @@ import { IArgs } from '../../Types'
     dm: true,
     exp: 20,
     usage: 'help || help <command_name>',
-    category: 'chatbot'
+    category: 'dev'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
@@ -18,7 +18,7 @@ export default class extends BaseCommand {
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
-            })).filter((command) => command.data.config.category !== 'chatbot')
+            })).filter((command) => command.data.config.category !== 'dev')
             let text = `🤖 What's Up! *@${M.sender.jid.split('@')[0]}*, *my name is ${
                 this.client.config.name
             }*`
