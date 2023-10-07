@@ -4,7 +4,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     description: 'Converts sticker to image',
     exp: 35,
     dm: true,
-    category: 'chatbot',
+    category: 'dev',
     aliases: ['toimg'],
     usage: 'img [quote_sticker]',
     cooldown: 25
