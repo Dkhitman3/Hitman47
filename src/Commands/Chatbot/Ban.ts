@@ -3,7 +3,7 @@ import { IArgs } from '../../Types'
 
 @Command('ban', {
     description: 'Bans/unban users',
-    category: 'chatbot',
+    category: 'dev',
     cooldown: 5,
     usage: 'ban --action=[ban/unban] [tag/quote users]',
     exp: 15
