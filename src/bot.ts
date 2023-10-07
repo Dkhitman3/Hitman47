@@ -1,5 +1,5 @@
 import { Client } from './Structures'
-import { MessageHandler, AssetHandler, CallHandler, EventHandler } from './Handlers'
+import { MessageHandler, AssetHandler, EventHandler } from './Handlers'
 ;(async () => {
     const client = new Client()
 
@@ -11,8 +11,6 @@ import { MessageHandler, AssetHandler, CallHandler, EventHandler } from './Handl
 
     const { handleEvents, sendMessageOnJoiningGroup } = new EventHandler(client)
 
-    const { handleCall } = new CallHandler(client)
-
     messageHandler.loadCommands()
 
     client.on('new_message', async (M) => await messageHandler.handleMessage(M))
@@ -23,8 +21,6 @@ import { MessageHandler, AssetHandler, CallHandler, EventHandler } from './Handl
         messageHandler.groups.push(group.jid)
         await sendMessageOnJoiningGroup(group)
     })
-
-    client.on('new_call', async (call) => await handleCall(call))
 
     client.once('open', async () => {
         messageHandler.groups = await client.getAllGroups()
