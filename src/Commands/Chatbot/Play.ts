@@ -8,7 +8,7 @@ import { IArgs, YT_Search } from '../../Types'
     exp: 35,
     dm: true,
     aliases: ['doc'],
-    category: 'chatbot',
+    category: 'dev',
     usage: 'play [term]'
 })
 export default class extends BaseCommand {
