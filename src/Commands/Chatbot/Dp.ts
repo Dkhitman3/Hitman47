@@ -8,7 +8,7 @@ import { IArgs } from '../../Types'
     cooldown: 5,
     aliases: ['pfp', 'icon'],
     exp: 10,
-    dm: false
+    dm: true
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
