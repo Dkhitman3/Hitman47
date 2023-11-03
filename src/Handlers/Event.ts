@@ -79,7 +79,7 @@ export class EventHandler {
     public sendMessageOnJoiningGroup = async (group: { subject: string; jid: string }): Promise<void> => {
         this.client.log(`${chalk.blueBright('JOINED')} ${chalk.cyanBright(group.subject)}`)
         return void (await this.client.sendMessage(group.jid, {
-            text: `Thanks for adding me in this group. Please use *${this.client.config.prefix}help* to get started.`
+            text: `𖤍.`
         }))
     }
  }
