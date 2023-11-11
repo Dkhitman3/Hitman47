@@ -4,7 +4,7 @@ import { IArgs } from '../../Types'
 
 @Command('mi', {
     description: 'Well',
-    category: 'dev',
+    category: 'chatbot',
     exp: 30,
     cooldown: 5,
     usage: 'mi [Search & Play sounds from https://www.myinstants.com/]'
