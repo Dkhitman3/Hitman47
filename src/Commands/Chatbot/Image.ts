@@ -3,7 +3,7 @@ import { IArgs } from '../../Types'
 
 @Command('image', {
     description: 'Will search img from the given term.',
-    category: 'dev',
+    category: 'chatbot',
     usage: 'image',
     aliases: ['pin', 'photo', 'Pictures'],
     exp: 15,
