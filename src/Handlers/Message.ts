@@ -53,7 +53,10 @@ export class MessageHandler {
         )
         const { bot } = await this.client.DB.getGroup(M.from)
         const commands = ['switch', 'hello', 'hi']
-        const { tag } = await this.client.DB.getUser(M.sender.jid)
+        const { ban, tag, inventory, companion } = await this.client.DB.getUser(M.sender.jid)
+        if (ban.banned) return void M.reply(
+            `You are banned from using commands. Banned by *${ban.bannedBy}* at *${ban.bannedIn}* in *${ban.time} (GMT)*. ❓ Reason: *${ban.reason}*`
+            )
         if (!tag)
             await this.client.DB.updateUser(M.sender.jid, 'tag', 'set', this.client.utils.generateRandomUniqueTag())
         const cmd = args[0].toLowerCase().slice(prefix.length)
