@@ -14,6 +14,7 @@ import {
     UserSchema,
     GroupSchema
 } from '../Database'
+import moment from 'moment-timezone'
 import { Utils } from '../lib'
 
 export class Database {
