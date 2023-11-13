@@ -22,6 +22,9 @@ export class UserSchema {
     @prop({ type: String, required: true, unique: true })
     public jid!: string
 
+    @prop({ type: () => Ban, required: true, default: () => ({ banned: false }) })
+    public ban!: Ban
+
     @prop({ type: Number, required: true, default: 0 })
     public experience!: number
 
