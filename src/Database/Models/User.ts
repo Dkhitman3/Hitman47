@@ -15,8 +15,7 @@ class Ban {
     public bannedIn?: string
 
     @prop({ type: String })
-    public time?: string
-    
+    public time?: string  
 }
 
 export class UserSchema {
@@ -25,9 +24,6 @@ export class UserSchema {
 
     @prop({ type: Number, required: true, default: 0 })
     public experience!: number
-
-    @prop({ type: Boolean, required: true, default: false })
-    public banned!: boolean
 
     @prop({ type: Number, required: true, default: 1 })
     public level!: number
