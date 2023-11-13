@@ -26,8 +26,36 @@ export class Database {
         await this.updateUser(jid, 'experience', 'inc', experience)
     }
 
-    public updateBanStatus = async (jid: string, action: 'ban' | 'unban' = 'ban'): Promise<void> => {
-        await this.updateUser(jid, 'banned', 'set', action === 'ban')
+    public banUser = async (jid: string, bannedBy: string, bannedIn: string, reason: string) => {
+        await this.getUser(jid)
+        const time = moment.tz('Etc/GMT').format('MMM D, YYYY HH:mm:ss')
+        await this.user.updateOne(
+            { jid },
+            {
+                $set: {
+                    'ban.banned': true,
+                    'ban.bannedBy': bannedBy,
+                    'ban.bannedIn': bannedIn,
+                    'ban.time': time,
+                    'ban.reason': reason
+                }
+            }
+        )
+    }
+
+    public unbanUser = async (jid: string) => {
+        await this.user.updateOne(
+            { jid },
+            {
+                $set: { 'ban.banned': false },
+                $unset: {
+                    'ban.bannedBy': '',
+                    'ban.bannedIn': '',
+                    'ban.time': '',
+                    'ban.reason': ''
+                }
+            }
+        )
     }
 
     public updateUser = async (
