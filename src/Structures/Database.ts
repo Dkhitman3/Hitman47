@@ -22,11 +22,6 @@ export class Database {
         (await this.user.findOne({ jid })) ||
         (await new this.user({ jid, tag: this.utils.generateRandomUniqueTag() }).save())
 
-    public setExp = async (jid: string, experience: number): Promise<void> => {
-        experience = experience + Math.floor(Math.random() * 25)
-        await this.updateUser(jid, 'experience', 'inc', experience)
-    }
-
     public banUser = async (jid: string, bannedBy: string, bannedIn: string, reason: string) => {
         await this.getUser(jid)
         const time = moment.tz('Etc/GMT').format('MMM D, YYYY HH:mm:ss')
