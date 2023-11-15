@@ -26,9 +26,7 @@
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
-    "@shineiichijo/canvas-chan": "^1.0.1",
     "@shineiichijo/marika": "^2.0.6",
-    "@shineiichijo/nhentai-ts": "^1.0.0",
     "@typegoose/typegoose": "^10.0.0",
     "@whiskeysockets/baileys": "^6.5.0",
     "axios": "^1.4.0",
@@ -53,7 +51,6 @@
     "qr-image": "^3.2.0",
     "qrcode-terminal": "^0.12.0",
     "spotifydl-x": "^0.3.5",
-    "telegraph-uploader": "^2.0.0",
     "typed-emitter": "^2.1.0",
     "wa-sticker-formatter": "^4.3.2",
     "youtubedl-core": "^4.11.5"
