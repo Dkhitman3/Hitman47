@@ -25,12 +25,6 @@ export class UserSchema {
     @prop({ type: () => Ban, required: true, default: () => ({ banned: false }) })
     public ban!: Ban
 
-    @prop({ type: Number, required: true, default: 0 })
-    public experience!: number
-
-    @prop({ type: Number, required: true, default: 1 })
-    public level!: number
-
     @prop({ type: String, required: true })
     public tag!: string
 }
