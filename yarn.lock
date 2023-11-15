@@ -680,33 +680,12 @@
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
-"@shineiichijo/canvas-chan@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shineiichijo/canvas-chan/-/canvas-chan-1.0.1.tgz#2ee9fd969e6ff8f1d3107c0f9e4f833ac446c835"
-  integrity sha512-v1Uh8SjhAyjpnLjlhgdZFq3V3dezHUZDcsImjz5hbkQappiDfjc6vyCx0urjk0k34WbV48ZOdyyJt/9WZGE0nw==
-  dependencies:
-    axios "^0.27.2"
-    canvas "^2.9.1"
-    fs-extra "^10.1.0"
-    gifencoder "^2.0.1"
-    path "^0.12.7"
-
 "@shineiichijo/marika@^2.0.6":
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@shineiichijo/marika/-/marika-2.0.6.tgz#2da914f374da07d1b426315db978e00a11c69b5d"
   integrity sha512-ZTHGVobLzMhYDMjadzHjjHmfRqLt2bHd+nHk+hyc5aTddUUoqPaB62/MGpWwpoOP9bzmXt0YI8VxNV0iGIQ33g==
   dependencies:
     axios "^0.27.2"
-
-"@shineiichijo/nhentai-ts@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@shineiichijo/nhentai-ts/-/nhentai-ts-1.0.1.tgz#653df1ef475cb515873e95f6c944015f2bb39756"
-  integrity sha512-52BMo+VDsn0zJC+nWx+860D2si1beyNy+nknvP5iI6xOfZy/URJTd5UV6N+hW4zv6Fkxd1G0OUaDQX21ROuNWQ==
-  dependencies:
-    axios "^0.27.2"
-    cheerio "^1.0.0-rc.12"
-    jszip "^3.10.0"
-    pdfkit "^0.13.0"
 
 "@skyra/gifenc@^1.0.0":
   version "1.0.1"
@@ -4602,17 +4581,6 @@ tar@^6.1.11:
     minizlib "^2.1.1"
     mkdirp "^1.0.3"
     yallist "^4.0.0"
-
-telegraph-uploader@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/telegraph-uploader/-/telegraph-uploader-2.0.0.tgz#625d7af288c955564fa746ac47081186abd5173e"
-  integrity sha512-iVECVD6BLAWot30cK2Oa9pa9oWAFm8Rj2Yn3lMWJyutqF5K0xo99y2gupeqRc8FyMYfte7vmnekenUK7/5CgMA==
-  dependencies:
-    form-data "^2.5.1"
-    is-buffer "^2.0.3"
-    isstream "^0.1.2"
-    node-fetch "^2.6.0"
-    stream-to-array "^2.3.0"
 
 text-table@^0.2.0:
   version "0.2.0"
