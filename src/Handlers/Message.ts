@@ -1,7 +1,6 @@
 import { join } from 'path'
 import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
-import { getStats } from '../lib'
 import { Message, Client, BaseCommand } from '../Structures'
 import { ICommand, IArgs } from '../Types'
 import axios from 'axios'
@@ -154,13 +153,6 @@ export class MessageHandler {
                 this.commands.size > 1 ? 'commands' : 'command'
             } with ${chalk.yellowBright(this.aliases.size)} ${this.aliases.size > 1 ? 'aliases' : 'alias'}`
         )
-    }
-
-    private handleUserStats = async (M: Message): Promise<void> => {
-        const { experience, level } = await this.client.DB.getUser(M.sender.jid)
-        const { requiredXpToLevelUp } = getStats(level)
-        if (requiredXpToLevelUp > experience) return void null
-        await this.client.DB.updateUser(M.sender.jid, 'level', 'inc', 1)
     }
 
     public commands = new Map<string, ICommand>()
