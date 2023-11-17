@@ -26,9 +26,11 @@
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@shineiichijo/canvas-chan": "^1.0.1",
     "@shineiichijo/marika": "^2.0.6",
+    "@shineiichijo/nhentai-ts": "^1.0.0",
     "@typegoose/typegoose": "^10.0.0",
-    "@whiskeysockets/baileys": "^6.5.0",
+    "@whiskeysockets/baileys": "^6.4.1",
     "axios": "^1.4.0",
     "axios-cache-interceptor": "^1.0.1",
     "canvacord": "^5.4.9",
@@ -54,7 +56,7 @@
     "telegraph-uploader": "^2.0.0",
     "typed-emitter": "^2.1.0",
     "wa-sticker-formatter": "^4.3.2",
-    "npm install ytdl-core@latest"
+    "youtubedl-core": "^4.11.5"
   },
   "devDependencies": {
     "@types/express": "^4.17.15",
@@ -67,4 +69,4 @@
     "eslint": "^8.29.0",
     "typescript": "^4.9.4"
   }
-  }
+}
