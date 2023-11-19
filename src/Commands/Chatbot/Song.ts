@@ -14,7 +14,7 @@ export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) return void M.reply('Provide a term to play, Baka!')
         const term = context.trim()
-        M.reply('🎧...Downloading...🎧')
+        M.reply('════◄••❀••►════')
         const videos = await this.client.utils.fetch<YT_Search[]>(`https://weeb-api.vercel.app/ytsearch?query=${term}`)
         if (!videos || !videos.length) return void M.reply(`No matching songs found | *"${term}"*`)
         const buffer = await new YT(videos[0].url, 'audio').download()
