@@ -16,7 +16,7 @@ export default class extends BaseCommand {
         const data = await this.client.utils.fetch<Lyrics[]>(`https://weeb-api.vercel.app/genius?query=${term}`)
         if (!data.length) return void (await M.reply(`Couldn't find any lyrics | *"${term}"*`))
         const buffer = await this.client.utils.getBuffer(data[0].image)
-        let text = `🌿 *Title:* ${data[0].title} *(${data[0].fullTitle})*\n🍥 *Artist:* ${data[0].artist}`
+        let text = `♥️ *Title:* ${data[0].title} *(${data[0].fullTitle})*\n\n🧧 *Artist:* ${data[0].artist}`
         const lyrics = await this.client.utils.fetch<string>(`https://weeb-api.vercel.app/lyrics?url=${data[0].url}`)
         text += `\n\n${lyrics}`
         return void (await M.reply(buffer, 'image', undefined, undefined, text, undefined, {
