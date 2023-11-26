@@ -20,8 +20,8 @@
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/3j9GNw?referralCode=TE7efK)
 
 ### Deployment Guide
-- [Self Hosting Guide](https://github.com/AliAryanTech/Chisato-WhatsApp/blob/master/Self-Hosting-Guide.md)
-- [Heroku Hosting Guide](https://github.com/AliAryanTech/Chisato-WhatsApp/blob/master/Heroku-Hosting-Guide.md)
+- [Self Hosting Guide](https://github.com/Dkhitman3/Bot/blob/master/Self-Hosting-Guide.md)
+- [Heroku Hosting Guide](https://github.com/Dkhitman3/Bot/blob/master/Heroku-Hosting-Guide.md)
 
 ### Preview Info
 - Fully Modular Design </br>
