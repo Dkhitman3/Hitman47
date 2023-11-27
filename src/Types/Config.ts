@@ -9,8 +9,6 @@ export interface IConfig {
     mods: string[]
     /**port number where the server will be started */
     PORT: number
-    /** API for google */
-    gkey: string
     /** API from BrainShop for chat bot */
     chatBotUrl: string
 }
