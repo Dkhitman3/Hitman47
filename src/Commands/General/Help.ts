@@ -18,7 +18,7 @@ export default class extends BaseCommand {
             })).filter((command) => command.data.config.category !== 'bot')
             const { porn } = await this.client.DB.getGroup(M.from)
             if (!porn) commands = commands.filter(({ data }) => data.config.category !== 'porn')
-            const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/64838c028270384ca9599.mp4')
+            const buffer = this.client.assets.get('hitman47') as Buffer
             let text = `Hitman47✨! *@${M.sender.jid.split('@')[0]}*, I'm ${
                 this.client.config.name
             }\n\nMy prefix is - "${this.client.config.prefix}"\n\n 1. *The usable commands are listed below*.`
