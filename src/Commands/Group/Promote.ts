@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('promote', {
     description: '',
-    category: 'group',
+    category: 'moderation',
     usage: 'promote',
     exp: 10,
     adminRequired: true,
