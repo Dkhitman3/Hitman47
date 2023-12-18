@@ -58,8 +58,7 @@ export class MessageHandler {
             await this.client.DB.updateUser(M.sender.jid, 'tag', 'set', this.client.utils.generateRandomUniqueTag())
         const cmd = args[0].toLowerCase().slice(prefix.length)
         const command = this.commands.get(cmd) || this.aliases.get(cmd)
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/f914310a2092644949569.mp4')
-        if (!command) return void M.reply(buffer, 'video', true, undefined, '*❌ Command not found*')
+        if (!command) return void M.reply('No such command, Bitch!')
         const disabledCommands = await this.client.DB.getDisabledCommands()
         const index = disabledCommands.findIndex((CMD) => CMD.command === command.name)
         if (index >= 0)
@@ -71,6 +70,7 @@ export class MessageHandler {
         if (command.config.category === 'boss' && !this.client.config.mods.includes(M.sender.jid))
             return void M.reply('This command can only be used by the MODS')
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
+        if (command.config.adminRequired && !isAdmin) return void M.reply('I need to be an admin to use this command')
         const cooldownAmount = (command.config.cooldown ?? 3) * 1000
         const time = cooldownAmount + Date.now()
         if (this.cooldowns.has(`${M.sender.jid}${command.name}`)) {
