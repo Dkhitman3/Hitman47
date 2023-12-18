@@ -42,6 +42,6 @@ export type TCategory =
     | 'anime'
     | 'general'
     | 'media'
-    | 'group'
+    | 'moderation'
     | 'educative'
     | 'boss'
