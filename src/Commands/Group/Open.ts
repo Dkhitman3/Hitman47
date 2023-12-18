@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('open', {
     description: 'open the group',
-    category: 'group',
+    category: 'moderation',
     usage: 'open',
     exp: 5,
     adminRequired: true,
