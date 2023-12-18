@@ -6,6 +6,7 @@ import { IArgs } from '../../Types'
     usage: 'ping (--tags=hidden)',
     category: 'group',
     exp: 35,
+    adminRequired: true,
     cooldown: 15,
     aliases: ['all', 'tagall', 'everyone']
 })
