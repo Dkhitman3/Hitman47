@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('demote', {
     description: 'demonstrate',
-    category: 'group',
+    category: 'moderation',
     usage: 'demote',
     exp: 10,
     adminRequired: true,
