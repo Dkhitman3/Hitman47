@@ -5,6 +5,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     category: 'group',
     usage: 'demote',
     exp: 10,
+    adminRequired: true,
     cooldown: 10,
    
 })
