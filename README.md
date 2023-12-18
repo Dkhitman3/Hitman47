@@ -66,3 +66,12 @@ HOW TO REACH THE OWNER? 👇👇👇
 ## Thanks To♥️
 * [`Shinei | Whatshell`](https://github.com/LuckyYam/)
 * [`@AliAryanTech@`](https://github.com/AliAryanTech/Chisato-WhatsApp)
+
+- 🌱 I’m currently learning **TS Language,B##**
+
+   🧧**I'm mot a developer**🧧
+
+**- 📫 easy to deploy this bot just tag deploy to Heroku that's all** 
+
+- ⚡ Fun fact **I Think I'm Funny.**
+- 
