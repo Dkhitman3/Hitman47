@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('purge', {
     description: 'destroy a group',
-    category: 'group',
+    category: 'moderation',
     exp: 5,
     cooldown: 5,
     adminRequired: true,
