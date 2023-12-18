@@ -206,12 +206,7 @@ type Events = {
     new_call: (call: { from: string }) => void
     new_message: (M: Message) => void
     participants_update: (event: IEvent) => void
-    new_group_joined: (group: { jid: string; subject: string }) => void
     open: () => void
-    pokemon_levelled_up: (data: {
-        M: Message
-        inBattle: boolean
-        player: 'player1' | 'player2'
-        user: string
-    }) => void
+    new_group_joined: (group: { jid: string; subject: string }) => void
 }
+    
