@@ -7,7 +7,7 @@ import axios from 'axios'
 @Command('urbandictionary', {
     aliases: ['ur'],
     description: 'Gives you the definition of the given word. ',
-    category: 'utils',
+    category: 'educative',
     usage: `ud [Word you want to search about]`,
     cooldown: 3,
     exp: 50,
