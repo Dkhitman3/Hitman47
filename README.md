@@ -9,8 +9,8 @@
 
 <a 
 href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
-<a href="https://github.com/Dkhitman3/Hitman47"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/Dkhitman3/Bot"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Bot?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Bot?color=54aeff&style=flat-square" /></a>
 <a href="https://github.com/Dkhitman3/Hitman47/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Dkhitman3/Dkhitman?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
 ---
