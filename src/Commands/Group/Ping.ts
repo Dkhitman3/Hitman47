@@ -4,7 +4,7 @@ import { IArgs } from '../../Types'
 @Command('ping', {
     description: 'Tags all of the members in a group',
     usage: 'ping (--tags=hidden)',
-    category: 'group',
+    category: 'moderation',
     exp: 35,
     adminRequired: true,
     cooldown: 15,
