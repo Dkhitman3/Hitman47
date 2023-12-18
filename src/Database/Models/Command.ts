@@ -3,7 +3,7 @@ import { Document } from 'mongoose'
 
 export class DisabledCommandsSchema {
     @prop({ type: String, required: true, unique: true })
-    public title!: string
+    public title!: string.
 
     @prop({ type: () => DisabledCommand, required: true, default: [] })
     public disabledCommands!: DisabledCommand[]
