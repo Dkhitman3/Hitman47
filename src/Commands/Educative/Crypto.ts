@@ -7,7 +7,7 @@ import axios from 'axios'
 @Command('crypto', {
     aliases: ['cr', 'coins'],
     description: 'Get Crypto Prices\n',
-    category: 'utils',
+    category: 'educative',
     usage: `crypto (Coin/Currency) (Currency/Coin) (count of 1st param)`,
     cooldown: 5,
     exp: 100,
