@@ -30,12 +30,12 @@ export default class extends BaseCommand {
             for (const category of categories) {
                 const categoryCommands: string[] = []
                 const filteredCommands = commands.filter((command) => command.data.config.category === category)
-                text += `\n\n*╚━❰ ${this.client.utils.capitalize(category)} ❱━╝*\n\n`
+                text += `\n\n*━━━❰ ${this.client.utils.capitalize(category)} ❱━━━*\n\n`
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📕 *Note:* *command it two times*\n\n᪥ Example: *${this.client.config.prefix}help 𝕙𝕖𝕝𝕝𝕠*\n\n߷ 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙱𝙾𝚃*`
-            return void (await M.reply(buffer, 'video', true, undefined, text, [M.sender.jid]))
+            text += `\n\n📕 *Note:* Use ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*`
+            return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
             const command = this.handler.commands.get(cmd) || this.handler.aliases.get(cmd)
