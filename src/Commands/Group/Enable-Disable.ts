@@ -6,7 +6,7 @@ import { IArgs, GroupFeatures } from '../../Types'
     description: 'Enables/Disables a certain group feature',
     usage: 'set',
     cooldown: 2,
-    category: 'dev',
+    category: 'group',
     exp: 25,
     aliases: ['feature']
 })
