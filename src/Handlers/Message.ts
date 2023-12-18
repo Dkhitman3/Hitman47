@@ -52,10 +52,8 @@ export class MessageHandler {
         )
         const { bot } = await this.client.DB.getGroup(M.from)
         const commands = ['switch', 'hello', 'hi']
-        const { ban, tag } = await this.client.DB.getUser(M.sender.jid)
-        if (ban.banned) return void M.reply(
-            `You are banned from using commands. Banned by *${ban.bannedBy}* at *${ban.bannedIn}* in *${ban.time} (GMT)*. ❓ Reason: *${ban.reason}*`
-            )
+        const { tag } = await this.client.DB.getUser(M.sender.jid)
+        
         if (!tag)
             await this.client.DB.updateUser(M.sender.jid, 'tag', 'set', this.client.utils.generateRandomUniqueTag())
         const cmd = args[0].toLowerCase().slice(prefix.length)
@@ -70,7 +68,7 @@ export class MessageHandler {
                     disabledCommands[index].disabledBy
                 }* in *${disabledCommands[index].time} (GMT)*. ❓ *Reason:* ${disabledCommands[index].reason}`
             )
-        if (command.config.category === 'dev' && !this.client.config.mods.includes(M.sender.jid))
+        if (command.config.category === 'boss' && !this.client.config.mods.includes(M.sender.jid))
             return void M.reply('This command can only be used by the MODS')
         const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
         const cooldownAmount = (command.config.cooldown ?? 3) * 1000
