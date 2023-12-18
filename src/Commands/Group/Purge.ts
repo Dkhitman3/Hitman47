@@ -5,6 +5,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     category: 'group',
     exp: 5,
     cooldown: 5,
+    adminRequired: true,
     usage: 'purge',
 })
 export default class command extends BaseCommand {
