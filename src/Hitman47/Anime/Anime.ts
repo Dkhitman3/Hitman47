@@ -1,7 +1,7 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 import { IArgs } from '../../Types'
 import { Anime } from '@shineiichijo/marika'
-import { AnyMessageContent } from '@adiwajshing/baileys'
+import { AnyMessageContent } from '@whiskeysockets/baileys'
 
 @Command('anime', {
     description: 'Searches an anime in MyAnimeList',
