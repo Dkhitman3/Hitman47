@@ -1,7 +1,7 @@
 import { prop, getModelForClass } from '@typegoose/typegoose'
 import { Document } from 'mongoose'
 
-export class Contact {
+export class Contact {you 
     @prop({ type: String, required: true, unique: true })
     public ID!: string
 
