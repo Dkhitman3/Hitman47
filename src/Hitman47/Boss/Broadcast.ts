@@ -5,7 +5,7 @@ import { AnyMessageContent, proto, delay } from '@adiwajshing/baileys'
 @Command('broadcast', {
     description: '',
     aliases: ['bc'],
-    category: 'dev',
+    category: 'boss',
     usage: ''
 })
 export default class command extends BaseCommand {
