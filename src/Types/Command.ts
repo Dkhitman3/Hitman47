@@ -30,6 +30,7 @@ interface ICommandConfig {
     dm?: boolean
     /**Cooldown of the command */
     cooldown?: number
+    adminRequired?: boolean
 }
 
 export type TCategory =
