@@ -30,10 +30,17 @@ interface ICommandConfig {
     dm?: boolean
     /**Cooldown of the command */
     cooldown?: number
-    antiBattle?: boolean
-    antiTrade?: boolean
 }
 
 export type TCategory =
-    | 'chatbot'
-    |  'dev'
+    | 'fun'
+    | 'games'
+    | 'porn'
+    | 'utils'
+    | 'bot'
+    | 'anime'
+    | 'general'
+    | 'media'
+    | 'group'
+    | 'educative'
+    | 'boss'
