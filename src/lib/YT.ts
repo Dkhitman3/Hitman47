@@ -1,7 +1,7 @@
 import ytdl, { validateURL, getInfo } from 'youtubedl-core'
 import { createWriteStream, readFile, unlink } from 'fs-extra'
 import { tmpdir } from 'os'
-import { Utils } from '.'
+import { Utils } from '..'
 
 export class YT {
     constructor(private url: string, private type: 'video' | 'audio' = 'video') {}
