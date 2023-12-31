@@ -5,6 +5,7 @@ import { IArgs, GroupFeatures } from '../../Types'
 @Command('enable', {
     description: 'Enables/Disables a certain group feature',
     usage: 'set',
+    aliases: ['e', 'en', 'set'],
     cooldown: 2,
     category: 'moderation',
     exp: 25,
