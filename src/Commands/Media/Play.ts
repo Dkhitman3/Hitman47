@@ -16,7 +16,7 @@ export default class extends BaseCommand {
         const videos = await this.client.utils.fetch<YT_Search[]>(`https://weeb-api.vercel.app/ytsearch?query=${term}`)
         if (!videos || !videos.length) return void M.reply(`No matching songs found | *"${term}"*`)
         const buffer = await new YT(videos[0].url, 'audio').download()
-        return void (await M.reply(buffer, 'audio', undefined, undefined, undefined, undefined, {
+        return void (await M.reply(buffer, 'audio', undefined, 'audio/mpeg', undefined, undefined, {
             title: videos[0].title,
             thumbnail: await this.client.utils.getBuffer(videos[0].thumbnail),
             mediaType: 2,
