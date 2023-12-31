@@ -5,11 +5,10 @@ import { IArgs, GroupFeatures } from '../../Types'
 @Command('enable', {
     description: 'Enables/Disables a certain group feature',
     usage: 'set',
-    aliases: ['e', 'en', 'set'],
+    aliases: ['feature', 'en', 'set'],
     cooldown: 2,
     category: 'moderation',
-    exp: 25,
-    aliases: ['feature']
+    exp: 25
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { flags }: IArgs): Promise<void> => {
