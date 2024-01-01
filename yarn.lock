@@ -1403,6 +1403,14 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
+anime-quiz@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/anime-quiz/-/anime-quiz-3.0.0.tgz#4a1c5dcb091498d6d3e74b78d4cf06ef5df677bf"
+  integrity sha512-ANQXM0tZIw+DeOYjp0yv34eQ+5LmMeAaNCR42Lq1yJc1wofzWPTNePSvee4sSQ6w8QAdawc170jEsQXh0plPiA==
+  dependencies:
+    fs-extra "^10.1.0"
+    path "^0.12.7"
+
 ansi-regex@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-2.1.1.tgz#c3b33ab5ee360d86e0e628f0468ae7ef27d654df"
