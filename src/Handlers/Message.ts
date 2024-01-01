@@ -1,6 +1,7 @@
 import { join } from 'path'
 import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
+import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
 import { ICommand, IArgs } from '../Types'
 import axios from 'axios'
@@ -158,4 +159,10 @@ export class MessageHandler {
     private cooldowns = new Map<string, number>()
 
     private path = [__dirname, '..', 'Commands']
+
+    public quiz = {
+        quizResponse: new Map<string, IQuiz>(),
+        failed: new Map<string, string[]>(),
+        creator: new Map<string, string>()
+    }
 }
