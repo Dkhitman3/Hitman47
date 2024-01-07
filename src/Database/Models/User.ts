@@ -12,7 +12,16 @@ export class UserSchema {
     public banned!: boolean
 
     @prop({ type: Number, required: true, default: 0 })
+    public wallet!: number
+
+    @prop({ type: Number, required: true, default: 0 })
+    public bank!: number
+
+    @prop({ type: Number, required: true, default: 0 })
     public quizWins!: number
+
+    @prop({ type: Number, required: true, default: 0 })
+    public lastDaily!: number
 
     @prop({ type: Number, required: true, default: 1 })
     public level!: number
