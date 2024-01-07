@@ -48,6 +48,10 @@ export class Database {
         await this.group.updateOne({ jid }, { $set: { [field]: update } })
     }
 
+    public setGold = async (jid: string, gold: number, field: 'wallet' | 'bank' = 'wallet'): Promise<void> => {
+        await this.updateUser(jid, field, 'inc', gold)
+    }
+
     public getSession = async (sessionId: string): Promise<TSessionModel | null> =>
         await this.session.findOne({ sessionId })
 
