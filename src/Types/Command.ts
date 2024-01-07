@@ -40,6 +40,7 @@ export type TCategory =
     | 'utils'
     | 'bot'
     | 'anime'
+    | 'economy'
     | 'general'
     | 'media'
     | 'moderation'
