@@ -22,7 +22,7 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 
 **here is the video how to deploy**
 
-[Youtube 🎥](https://www.youtube.com/watch?v=https://youtu.be/K7KycxbCTOs?feature=shared)
+[Youtube 🎥](https://youtu.be/K7KycxbCTOs?feature=shared)
 
 ### Deployment Guide🏮
 - [Self Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
