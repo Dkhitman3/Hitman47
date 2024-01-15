@@ -1,5 +1,11 @@
 import { BaseCommand, Command, Message } from '../../Structures';
 
+interface CustomMessageContent {
+    text: string;
+    footer: string;
+    headerType?: number; 
+}
+
 @Command('faq', {
     description: '',
     usage: 'faq',
@@ -13,12 +19,14 @@ export default class command extends BaseCommand {
 
         const footerText = '© Hitman47 Inc 2024';
 
-        return void (await this.client.sendMessage(from, {
+        const messageContent: CustomMessageContent = {
             text: faqText,
             footer: footerText,
             headerType: 1
-        }, {
+        };
+
+        return void (await this.client.sendMessage(from, messageContent, {
             quoted: message
         }));
     }
-}
+ }
