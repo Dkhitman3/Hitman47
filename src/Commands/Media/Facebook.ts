@@ -49,6 +49,14 @@ export default class extends BaseCommand {
         // Implement logic to extract the post ID from the URL
         // For example: https://www.facebook.com/{username}/posts/{post_id}
         // Extract the post ID using regular expressions or other suitable methods
+
+        const postIdMatch = url.match(/\/posts\/(\d+)/);
+        if (postIdMatch && postIdMatch[1]) {
+            return postIdMatch[1];
+        } else {
+            // Handle the case where the post ID couldn't be extracted
+            throw new Error('Failed to extract Facebook post ID from URL');
+        }
     }
                          }
-            
+        
