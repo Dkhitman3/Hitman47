@@ -16,8 +16,6 @@ export default class extends BaseCommand {
                 command,
                 data
             })).filter((command) => command.data.config.category !== 'bot')
-            const { porn } = await this.client.DB.getGroup(M.from)
-            if (!porn) commands = commands.filter(({ data }) => data.config.category !== 'porn')
             const buffer = this.client.assets.get('hitman47') as Buffer
             let text = `✨! *@${M.sender.jid.split('@')[0]}*, 𝐈 𝐀𝐌 ${
                 this.client.config.name
