@@ -21,21 +21,21 @@ export default class extends BaseCommand {
         }
 
         try {
-            add your Facebook Graph API using an access token
             const accessToken = 'YOUR_FACEBOOK_ACCESS_TOKEN';
-            const postId = extractPostIdFromUrl(url);
+            const postId = this.extractPostIdFromUrl(url);
 
             const { data } = await axios.get(
                 `https://graph.facebook.com/v14.0/${postId}?fields=attachments&access_token=${accessToken}`
             );
+
             const attachments = data.attachments?.data;
-            
+
             if (attachments && attachments.length > 0) {
                 const firstAttachment = attachments[0];
                 const attachmentUrl = firstAttachment.media.image.src;
 
                 const buffer = await this.client.utils.getBuffer(attachmentUrl);
-                await reply(buffer, 'image');
+                await reply(buffer, 'image'); // Adjust type based on the actual content type
 
             } else {
                 await reply(`❌ No media data found for the provided Facebook post URL.`);
@@ -46,7 +46,9 @@ export default class extends BaseCommand {
     };
 
     private extractPostIdFromUrl(url: string): string {
-      
-   example: https://www.facebook.com/{username}/posts/{post_id}
+        // Implement logic to extract the post ID from the URL
+        // For example: https://www.facebook.com/{username}/posts/{post_id}
+        // Extract the post ID using regular expressions or other suitable methods
     }
-}
+                         }
+            
