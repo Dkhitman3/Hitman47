@@ -92,29 +92,28 @@ export class MessageHandler {
     }
 
     private moderate = async (M: Message): Promise<void> => {
-        if (M.chat !== 'group') return void null
-        const { mods } = await this.client.DB.getGroup(M.from)
-        const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''))
-        if (!mods || M.sender.isAdmin || !isAdmin) return void null
-        const urls = this.client.utils.extractUrls(M.content)
+    if (M.chat !== 'group') return void null;
+    const { mods } = await this.client.DB.getGroup(M.from);
+    const isAdmin = M.groupMetadata?.admins?.includes(this.client.correctJid(this.client.user?.id || ''));
+    if (!mods || M.sender.isAdmin || !isAdmin) {
+        const urls = this.client.utils.extractUrls(M.content);
+        
         if (urls.length > 0) {
-            const groupinvites = urls.filter((url) => url.includes('chat.whatsapp.com'))
+            const groupinvites = urls.filter((url) => url.includes('chat.whatsapp.com'));
+            
             if (groupinvites.length > 0) {
-                groupinvites.forEach(async (invite) => {
-                    const code = await this.client.groupInviteCode(M.from)
-                    const inviteSplit = invite.split('/')
-                    if (inviteSplit[inviteSplit.length - 1] !== code) {
-                        this.client.log(
-                            `${chalk.blueBright('MOD')} ${chalk.green('Group Invite')} by ${chalk.yellow(
-                                M.sender.username
-                            )} in ${chalk.cyanBright(M.groupMetadata?.subject || 'Group')}`
-                        )
-                        return void (await this.client.groupParticipantsUpdate(M.from, [M.sender.jid], 'remove'))
-                    }
-                })
+                this.client.log(
+                    `${chalk.blueBright('MOD')} ${chalk.green('Group Invite')} by ${chalk.yellow(
+                        M.sender.username
+                    )} in ${chalk.cyanBright(M.groupMetadata?.subject || 'Group')}`
+                );
+                
+                return void (await this.client.groupParticipantsUpdate(M.from, [M.sender.jid], 'remove'));
             }
         }
     }
+};
+            
 
     private formatArgs = (args: string[]): IArgs => {
         args.splice(0, 1)
