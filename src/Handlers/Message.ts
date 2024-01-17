@@ -5,11 +5,18 @@ import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
 import { ICommand, IArgs } from '../Types'
 import axios from 'axios'
+import Game from 'chess-node'
 
 export class MessageHandler {
     constructor(private client: Client) {}
 
     public groups!: string[]
+
+    public chess = {
+        games: new Map<string, Game | undefined>(),
+        challenges: new Map<string, { challenger: string; challengee: string } | undefined>(),
+        ongoing: new Set<string>()
+    }
 
     public handleMessage = async (M: Message): Promise<void> => {
         const { prefix } = this.client.config
