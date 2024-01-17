@@ -1,8 +1,8 @@
 <p align="center">
-<img src="https://telegra.ph/file/20c8b2be57cca5ab47230.jpg" alt="nz" width="350"/>
+<img src="https://telegra.ph/file/7d99d1210ce607f428782.jpg" alt="nz" width="350"/>
 </p>
 
-## ***♥️Hitman47♥️***
+## ***⚡Godspeed⚡***
 > This Script WhatsApp Bot Using Library Baileys & Script is free for everyone, not for Sale!
 > ***Note: it's a modified version of [chisato-WhatsAp](https://github.com/AliAryanTech/Chisato-WhatsApp)***
 </br>
@@ -44,7 +44,7 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 
 ## License✡️
 
-> Hitman47 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
+> Godspeed is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
 
 ## Support 🧧
 
@@ -57,7 +57,7 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 ## 🎗Help
 Please give this repo a ⭐ if it helped you.
 
-## ✍︎ Hitman47 ♥️
+## ✍︎ Godspeed⚡
 
 *This is a lovely project by Hitman47 🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
  
