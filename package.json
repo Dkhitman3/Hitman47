@@ -1,0 +1,76 @@
+{
+  "name": "Hitman47",
+  "version": "0.1.0",
+  "description": "A WhatsApp bot written in TypeScript using Baileys",
+  "author": "dk",
+  "main": "dist/bot.js",
+  "keywords": [
+    "bot",
+    "whatsapp",
+    "anime"
+  ],
+  "license": "AGPL-3.0",
+  "scripts": {
+    "format": "prettier --write --config .prettierrc.json \"src/**/*.ts\"",
+    "start": "node --max-old-space-size=4096 dist/bot.js",
+    "build": "yarn rimraf dist/ && yarn tsc -p .",
+    "postinstall": "yarn build"
+  },
+  "bugs": {
+    "url": "https://github.com/Dkhitman3/Bot/issues"
+  },
+  "homepage": "https://github.com/Dkhitman3/Bot",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dkhitman3/Bot.git"
+  },
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@shineiichijo/canvas-chan": "^1.0.1",
+    "@shineiichijo/marika": "^2.0.6",
+    "@shineiichijo/nhentai-ts": "^1.0.0",
+    "@typegoose/typegoose": "^10.0.0",
+    "@whiskeysockets/baileys": "^6.4.1",
+    "axios": "^1.4.0",
+    "anime-quiz": "^3.0.0",
+    "axios-cache-interceptor": "^1.0.1",
+    "canvacord": "^5.4.9",
+    "chalk": "4.1.1",
+    "cheerio": "^1.0.0-rc.12",
+    "chess-image-generator-ts": "^1.0.0",
+    "chess-node": "^1.1.0",
+    "dotenv": "^16.0.3",
+    "emoji-regex": "^10.2.1",
+    "events": "^3.3.0",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "fs-extra": "^11.1.0",
+    "imgur": "^2.2.0",
+    "link-preview-js": "^3.0.4",
+    "linkifyjs": "^4.0.2",
+    "moment-timezone": "^0.5.40",
+    "mongoose": "^6.7.0",
+    "path": "^0.12.7",
+    "pino": "^8.7.0",
+    "prettier": "^2.8.1",
+    "qr-image": "^3.2.0",
+    "qrcode-terminal": "^0.12.0",
+    "slot-machine": "^2.1.0",
+    "spotifydl-x": "^0.3.5",
+    "telegraph-uploader": "^2.0.0",
+    "typed-emitter": "^2.1.0",
+    "wa-sticker-formatter": "^4.3.2",
+    "youtubedl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node-cron": "^3.0.1",
+    "@types/prettier": "^2.7.1",
+    "@types/qr-image": "^3.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.4"
+  }
+}
