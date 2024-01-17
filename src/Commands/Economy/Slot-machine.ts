@@ -1,5 +1,5 @@
-import { SlotMachine, SlotSymbol } from 'slot-machine';
-import { BaseCommand, Command, Message } from '../../Structures';
+import { SlotMachine, SlotSymbol } from 'slot-machine'
+import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('slot', {
     category: 'economy',
@@ -11,24 +11,22 @@ import { BaseCommand, Command, Message } from '../../Structures';
 })
 export default class command extends BaseCommand {
     override execute = async (M: Message): Promise<void> => {
-        if (M.numbers.length < 1) return void M.reply(`amount?`);
+        if (M.numbers.length < 1) return void M.reply(`amount?`)
         const amount = M.numbers[0];
-        const { wallet } = await this.client.DB.getUser(M.sender.jid);
-        if (amount > wallet) return void M.reply(`check ur wallet`);
-
-        const machine = new SlotMachine(3, this.symbols);
+        const { wallet } = await this.client.DB.getUser(M.sender.jid)
+        if (amount > wallet) return void M.reply(`check ur wallet`)
+        const machine = new SlotMachine(3, this.symbols)
         const results = machine.play();
         const lines = results.lines.filter((line) => !line.diagonal);
-        const points = results.lines.reduce((total, line) => total + line.points, 0);
+        const points = results.lines.reduce((total, line) => total + line.points, 0)
         const resultAmount = points <= 0 ? -amount : amount * points;
-
-        await this.client.DB.setGold(M.sender.jid, resultAmount);
+        await this.client.DB.setGold(M.sender.jid, resultAmount)
 
         let text = '🎰 *SLOT MACHINE* 🎰\n\n';
         text += results.visualize();
         text += points <= 0 ? `📉 You lost ${amount} gold` : `📈 You won ${resultAmount} gold`;
 
-        return void (await this.client.sendMessage(M.from, { text }, { quoted: M.message }));
+        return void (await this.client.sendMessage(M.from, { text }, { quoted: M.message }))
     };
 
     private symbols = [
