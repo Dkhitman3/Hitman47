@@ -17,12 +17,12 @@
     "postinstall": "yarn build"
   },
   "bugs": {
-    "url": "https://github.com/Dkhitman3/Bot/issues"
+    "url": "https://github.com/ChristianNimb/Bot/issues"
   },
-  "homepage": "https://github.com/Dkhitman3/Bot",
+  "homepage": "https://github.com/ChristianNimb/Bot",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Dkhitman3/Bot.git"
+    "url": "https://github.com/ChristianNimb/Bot.git"
   },
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
