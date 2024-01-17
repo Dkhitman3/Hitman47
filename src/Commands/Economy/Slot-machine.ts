@@ -4,7 +4,6 @@ import { BaseCommand, Command, Message } from '../../Structures';
 @Command('slot', {
     category: 'economy',
     description: 'Bets the given amount of gold in a slot machine',
-    casino: true,
     usage: 'slot <amount>',
     cooldown: 35,
     exp: 10,
