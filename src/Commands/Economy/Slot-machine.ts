@@ -43,5 +43,5 @@ export default class command extends BaseCommand {
             weight: 40
         })
     ]
-}
+               }
                                             }
