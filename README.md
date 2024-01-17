@@ -48,11 +48,11 @@ href="https://github.com/ChristianNimb/"><img title="Author" src="https://img.sh
 
 ## License✡️
 
-> Godspeed is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
+> Godspeed is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/ChristianNimb/Godspeed/tree/master?tab=readme-ov-file/blob/master/LICENSE)
 
 ## Support 🧧
 
-<a href="https://chat.whatsapp.com/IE4TnhkOjjyEf53aJMTfwW">
+<a href="https://chat.whatsapp.com/DltVVODKSGEBnIrTRfsbGf">
   <img src="https://img.shields.io/badge/Support_Group-0a0a0a?style=for-the-badge&logo=whatsapp&logoColor=white">
 </a>
 
