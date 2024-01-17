@@ -3,7 +3,7 @@ import { IArgs } from '../../Types'
 
 @Command('help', {
     description: "Displays the bot's usable commands",
-    aliases: ['h', 'menu', 'commands'],
+    aliases: ['c', 'menu', 'commands'],
     cooldown: 5,
     exp: 20,
     usage: 'help || help <command_name>',
