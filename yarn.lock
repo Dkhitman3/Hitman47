@@ -1742,6 +1742,27 @@ bytes@3.1.2:
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.1.2.tgz#8b0beeb98605adf1b128fa4386403c009e0221a5"
   integrity sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==
 
+chess-image-generator-ts@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/chess-image-generator-ts/-/chess-image-generator-ts-1.0.0.tgz#e9eb9a69e0d13a6f09c65a9e5c0f39bd5c73102b"
+  integrity sha512-APEiqVkTnGB7dY3fVinI9u1Ip7qL/PcF10XJLptQ0y8HCivI6N7+HLaFGE0rEE2mIztphEfkNSm74hcvrBRhDA==
+  dependencies:
+    canvas "^2.6.1"
+    canvas-to-buffer "^1.1.0"
+    chess.js "^0.10.2"
+    fs "0.0.1-security"
+    path "^0.12.7"
+
+chess-node@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/chess-node/-/chess-node-1.1.0.tgz#e809e76a5fc79682e133072fd17028f24ec3443e"
+  integrity sha512-icuevkbv0OdgDkHPItHW0Si5R3e+SmuzT2fM4+GOavLJOv9tEhc6jX4NoFy4yIcqUzf2eplkRb3a5Z+p1aa+1w==
+
+chess.js@^0.10.2:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/chess.js/-/chess.js-0.10.3.tgz#8c3b98e8411c2ff3ab4b1fc022ddebd1ae037120"
+  integrity sha512-i51JgVM0ksFMbLJYKoDpfrcFxJHq/XQQx8NltCdfMyDv7vpU5JVzsZz1EOw7nA27eGA5t8tSxodAN+Wc704BoQ==
+
 cache-manager@^5.2.2:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/cache-manager/-/cache-manager-5.2.3.tgz#b6a8b4469c57fdfdae1deed7f81ea9e057c7eade"
@@ -4323,6 +4344,11 @@ setprototypeof@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
   integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
+
+slot-machine@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/slot-machine/-/slot-machine-2.1.0.tgz#e9cb01312f5e4f4b8d1c5301640df4e31b170454"
+  integrity sha512-TtwbH6rNlXolIPI0ALA0eq++XBkF8ISIkBCitBt1QfwgsOMoAcU6XRmkVXXzRcqPLVT6KyO02mwMTnPOec6M3Q==
 
 sharp@^0.30.0:
   version "0.30.7"
