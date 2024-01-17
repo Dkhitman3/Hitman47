@@ -17,7 +17,7 @@ export default class extends BaseCommand {
         text += `➪ 🟦add your number\n\n`
         text += `➪ 🟦add your number\n\n`
         text += `➪ 🤖 *Bots 3*\n\n`
-        text += `➪ ❚❚ ↻ 𝗵𝗶𝘁𝗺𝗮𝗻47 ©️ 2023`
+        text += `➪ ❚❚ ↻ godspeed ©️ 2023`
         return void (await M.reply(buffer, 'video', true, undefined, text))
     }
 }
