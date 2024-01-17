@@ -1,7 +1,7 @@
 import { BaseCommand, Command, Message } from '../../Structures'
 
 @Command('bots', {
-    description: 'List all hitman47 bots',
+    description: 'List all Godspeed bots',
     category: 'general',
     aliases: ['bots'],
     usage: 'bots',
