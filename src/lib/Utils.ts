@@ -126,5 +126,50 @@ export class Utils {
         ).data
 
     public exec = promisify(exec)
+
+    public parseChessBoard = (board: string[]): string[][] =>
+        this.chunk(
+            board.map((tile) => {
+                if (tile === 'bK') return 'k'
+                if (tile === 'wK') return 'K'
+                if (tile === 'wk') return 'N'
+                if (tile === 'bk') return 'n'
+                if (tile[0] === 'w') return tile[1].toUpperCase()
+                return tile[1].toLowerCase()
+            }),
+            8
+        ).reverse()
+
+    public endChess = async (
+        handler: MessageHandler,
+        client: Client,
+        jid: string,
+        winner?: 'Black' | 'White' | string
+    ): Promise<void> => {
+        const game = handler.chess.games.get(jid)
+        const challenge = handler.chess.challenges.get(jid)
+        if (!game || !challenge) return void null
+        const w = winner?.endsWith('.net')
+            ? winner
+            : winner === 'White'
+            ? challenge.challenger
+            : winner === 'Black'
+            ? challenge.challengee
+            : null
+        handler.chess.challenges.set(jid, undefined)
+        handler.chess.games.set(jid, undefined)
+        handler.chess.ongoing.delete(jid)
+        if (!w)
+            return void (await client.sendMessage(jid, {
+                text: 'Match ended in a Draw!'
+            }))
+        await client.DB.setExp(w, 1500)
+        if (w)
+            return void (await client.sendMessage(jid, {
+                text: `@${w.split('@')[0]} Won`,
+                mentions: [w]
+            }))
+    }
 }
+                    
     
