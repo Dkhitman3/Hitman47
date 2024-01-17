@@ -8,14 +8,14 @@
 </br>
 
 <a 
-href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
-<a href="https://github.com/Dkhitman3/Hitman47"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Dkhitman3/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
+href="https://github.com/ChristianNimb/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
+<a href="https://github.com/ChristianNimb/Godspeed"><img title="Stars" src="https://img.shields.io/github/stars/ChristianNimb/Godspeed?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/ChristianNimb/Godspeed/network/members"><img title="Forks" src="https://img.shields.io/github/forks/ChristianNimb/Godspeed?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/ChristianNimb/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/ChristianNimb/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
 1. **Fork the repo**
     <br>
-<a href='https://github.com/Dkhitman3/Hitman47/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/ChristianNimb/Godspeed/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 ---
 
@@ -29,8 +29,8 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 [Youtube 🎥](https://youtu.be/K7KycxbCTOs?feature=shared)
 
 ### Deployment Guide🏮
-- [Self Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
-- [Heroku Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
+- [Self Hosting Guide](https://github.com/ChristianNimb/Godspeed/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
+- [Heroku Hosting Guide](https://github.com/ChristianNimb/Godspeed/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
 
 ### Preview Info🧧
 - Fully Modular Design </br>
@@ -63,10 +63,10 @@ Please give this repo a ⭐ if it helped you.
 
 ## ✍︎ Godspeed⚡
 
-*This is a lovely project by Hitman47 🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
+*This is a lovely project by Godspeed ⚡. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
  
 HOW TO REACH THE OWNER? 👇👇👇
-   <a href="https://wa.me/+27844132352?text=Hi%20I%20Am%20From%20GitHub%20☺️">
+   <a href="https://wa.me/+231775928537?text=Hi%20I%20Am%20From%20GitHub%20☺️">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>&nbsp;&nbsp;
    <a
