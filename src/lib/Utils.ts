@@ -8,6 +8,8 @@ import FormData from 'form-data'
 import { load } from 'cheerio'
 import regex from 'emoji-regex'
 import * as linkify from 'linkifyjs'
+import { MessageHandler } from '../Handlers'
+import { Client } from '../Structures'
 
 export class Utils {
     public generateRandomHex = (): string => `#${(~~(Math.random() * (1 << 24))).toString(16)}`
@@ -126,6 +128,12 @@ export class Utils {
         ).data
 
     public exec = promisify(exec)
+
+    public chunk = <T>(arr: T[], length: number): T[][] => {
+        const result = []
+        for (let i = 0; i < arr.length / length; i++) result.push(arr.slice(i * length, i * length + length))
+        return result
+    }
 
     public parseChessBoard = (board: string[]): string[][] =>
         this.chunk(
