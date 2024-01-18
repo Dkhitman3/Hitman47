@@ -6,7 +6,7 @@
 
 ### Pre-requisite
 
-1. [Hitman47](https://github.com/Dkhitman3/Hitman47) - Go there
+1. [Godspeed](https://github.com/ChristianNimb/Godspeed) - Go there
 2. Scroll down a bit and you will see the "Deploy To Heroku" button in purple color (sorry if you are color blind)
 3. Click on it and login or sign up for Heroku
 4. Enter the following fields
