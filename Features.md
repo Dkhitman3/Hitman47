@@ -28,7 +28,7 @@
 |Misc| usage|
 |----|--------|
 |Hi| WELL|
-|Hitman47| Views info :v|
+|Godspeed| Views info :v|
 |Retrieve| Retrieve viewOnceMessage WhatsApp Message|
 
 |Moderation| usage|
