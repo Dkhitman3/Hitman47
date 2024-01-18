@@ -10,7 +10,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message): Promise<void> => {
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/b161409b1f126c2a0725a.mp4')
+        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/6fdff42626ceb5bf43f7f.mp4')
         let text = ''
         text += `➪ 😻𝔹𝐎𝕋𝐒😻\n\n`
         text += `➪ 🟦add your number\n\n`
