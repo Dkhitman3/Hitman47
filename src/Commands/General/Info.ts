@@ -22,7 +22,7 @@ export default class extends BaseCommand {
             homepage: string
             name: string
         }
-        const image = this.client.assets.get('hitman47') as Buffer
+        const image = this.client.assets.get('godspeed') as Buffer
         const uptime = this.client.utils.formatSeconds(process.uptime())
         const text = `*🍁 ${this.client.config.name} 🍁*\n\n📙 *Description: ${description}*\n\n🔗 *Commands:* ${this.handler.commands.size}\n🚦 *Uptime:* ${uptime}\n🎐 *Users:* ${users}\n🌃 *Mods:* ${this.client.config.mods.length}\n🔮 *Groups:* ${groups.length}`
         return void (await reply(image, 'image', undefined, undefined, text, undefined, {
