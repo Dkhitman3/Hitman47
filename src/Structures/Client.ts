@@ -19,10 +19,10 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
         this.config = {
             name: process.env.BOT_NAME || 'bot',
             session: process.env.SESSION || 'SESSION',
-            prefix: process.env.PREFIX || '#',
+            prefix: process.env.PREFIX || '?',
             gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
-            mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
-            chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
+            mods: (process.env.MODS || '231775928537').split(', ').map((user) => `${user}@s.whatsapp.net`),
+            chatBotUrl: 'https://api.brainshop.ai/get?bid=180035&key=8jKyBaqKHfvcRej3&uid=[uid]&msg=[msg]',
             PORT: Number(process.env.PORT || 3000)
         }
         new Server(this)
@@ -40,7 +40,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             printQRInTerminal: true,
             auth: state,
             logger: P({ level: 'fatal' }),
-            browser: ['Hitman47😈', 'fatal', '4.0.0'],
+            browser: ['Godspeed⚡', 'fatal', '4.0.0'],
             getMessage: async (key) => {
                 return {
                     conversation: ''
