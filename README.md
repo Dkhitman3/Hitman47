@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://telegra.ph/file/7d99d1210ce607f428782.jpg" alt="nz" width="350"/>
+<img src="https://telegra.ph/file/bcbdd409e20de4164c1fa.jpg" alt="nz" width="350"/>
 </p>
 
 ## ***⚡Godspeed⚡***
