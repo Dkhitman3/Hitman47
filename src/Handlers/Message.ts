@@ -66,7 +66,7 @@ export class MessageHandler {
             await this.client.DB.updateUser(M.sender.jid, 'tag', 'set', this.client.utils.generateRandomUniqueTag())
         const cmd = args[0].toLowerCase().slice(prefix.length)
         const command = this.commands.get(cmd) || this.aliases.get(cmd)
-        if (!command) return void M.reply('that is not a command bro! type help for valid command')
+        if (!command) return void M.reply('𝒕𝒉𝒂𝒕 𝒊𝒔 𝒏𝒐𝒕 𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 𝒃𝒓𝒐! 𝒕𝒚𝒑𝒆 𝒉𝒆𝒍𝒑 𝒇𝒐𝒓 𝒗𝒂𝒍𝒊𝒅 𝒄𝒐𝒎𝒎𝒂𝒏𝒅.')
         const disabledCommands = await this.client.DB.getDisabledCommands()
         const index = disabledCommands.findIndex((CMD) => CMD.command === command.name)
         if (index >= 0)
