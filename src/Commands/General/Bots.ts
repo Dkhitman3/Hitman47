@@ -3,7 +3,7 @@ import { proto } from '@whiskeysockets/baileys';
 
 @Command('bots', {
     description: 'shows all H47 bots.',
-    category: 'general',
+    category: 'core',
     usage: 'bots',
     aliases: ['b'],
     exp: 20,
@@ -12,14 +12,20 @@ import { proto } from '@whiskeysockets/baileys';
 export default class command extends BaseCommand {
     override execute = async (M: Message): Promise<void> => {
         const botUsername = this.client.config.name;
-        const botData = [{ sessionId: botUsername, number: this.client.correctJid(this.client.user?.id), active: true }];
+        const userId = this.client.user?.id;
 
-        const formattedBotData = botData.reduce((acc, bot) => {
-            const status = bot.active ? 'Active 🟩' : 'Inactive 🟥';
-            acc += `\n\n🔰 *Name: ${bot.sessionId}*\n🧧 *Number: ${bot.number}*\n🔵 *Status: ${status}*`;
-            return acc;
-        }, '*🏮 Hitman47 Bots 🏮*');
+        if (userId) {
+            const botData = [{ sessionId: botUsername, number: this.client.correctJid(userId), active: true }];
 
-        await M.reply(formattedBotData);
+            const formattedBotData = botData.reduce((acc, bot) => {
+                const status = bot.active ? 'Active 🟩' : 'Inactive 🟥';
+                acc += `\n\n🔰 *Name: ${bot.sessionId}*\n🧧 *Number: ${bot.number}*\n🔵 *Status: ${status}*`;
+                return acc;
+            }, '*🏮 H47 Bots 🏮*');
+
+            await M.reply(formattedBotData);
+        } else {
+            await M.reply('Unable to fetch bot data: user ID is undefined.');
+        }
     }
-                      }
+                    }
