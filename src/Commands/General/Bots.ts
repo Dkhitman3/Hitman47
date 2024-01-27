@@ -1,23 +1,25 @@
-import { BaseCommand, Command, Message } from '../../Structures'
+import { BaseCommand, Command, Message } from '../../Structures';
+import { proto } from '@whiskeysockets/baileys';
 
 @Command('bots', {
-    description: 'List all hitman47 bots',
+    description: 'shows all Lucy bots.',
     category: 'general',
-    aliases: ['bots'],
     usage: 'bots',
-    cooldown: 5,
-    exp: 100
+    aliases: ['b'],
+    exp: 20,
+    cooldown: 3
 })
-export default class extends BaseCommand {
-    public override execute = async (M: Message): Promise<void> => {
-        const buffer = await this.client.utils.getBuffer('https://telegra.ph/file/b161409b1f126c2a0725a.mp4')
-        let text = ''
-        text += `➪ 😻𝔹𝐎𝕋𝐒😻\n\n`
-        text += `➪ 🟦add your number\n\n`
-        text += `➪ 🟦add your number\n\n`
-        text += `➪ 🟦add your number\n\n`
-        text += `➪ 🤖 *Bots 3*\n\n`
-        text += `➪ ❚❚ ↻ 𝗵𝗶𝘁𝗺𝗮𝗻47 ©️ 2023`
-        return void (await M.reply(buffer, 'video', true, undefined, text))
+export default class command extends BaseCommand {
+    override execute = async (M: Message): Promise<void> => {
+        const botUsername = this.client.config.name;
+        const botData = [{ sessionId: botUsername, number: this.client.correctJid(this.client.user?.id), active: true }];
+
+        const formattedBotData = botData.reduce((acc, bot) => {
+            const status = bot.active ? 'Active 🟩' : 'Inactive 🟥';
+            acc += `\n\n🔰 *Name: ${bot.sessionId}*\n🧧 *Number: ${bot.number}*\n🔵 *Status: ${status}*`;
+            return acc;
+        }, '*🏮 Lucy Bots 🏮*');
+
+        await M.reply(formattedBotData);
     }
-}
+                      }
