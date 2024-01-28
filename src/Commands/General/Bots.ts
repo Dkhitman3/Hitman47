@@ -3,7 +3,7 @@ import { proto } from '@whiskeysockets/baileys';
 
 @Command('bots', {
     description: 'shows all H47 bots.',
-    category: 'core',
+    category: 'general',
     usage: 'bots',
     aliases: ['b'],
     exp: 20,
