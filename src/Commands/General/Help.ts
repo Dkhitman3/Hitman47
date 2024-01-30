@@ -17,7 +17,7 @@ export default class extends BaseCommand {
                 data
             })).filter((command) => command.data.config.category !== 'bot')
             M.reply('*..i think i love you..*')
-            const buffer = this.client.assets.get('hitman47') as Buffer
+            const buffer = this.client.assets.get('godspeed') as Buffer
             let text = `✨! *@${M.sender.jid.split('@')[0]}*, 𝐈 𝐀𝐌 ${
                 this.client.config.name
             }\n\n𝐌𝐲 𝐏𝐫𝐞𝐟𝐢𝐱 𝐢𝐬 - "${this.client.config.prefix}"\n\n 1. *The usable commands are listed below*.`
