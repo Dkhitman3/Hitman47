@@ -1,5 +1,5 @@
 {
-  "name": "Hitman47",
+  "name": "Godspeed",
   "description": "A WhatsApp Bot written in TypeScript using Baileys.",
   "keywords": [
     "bot",
@@ -7,9 +7,9 @@
     "whatsapp-bot",
     "whatsapp-anime-bot"
   ],
-  "logo": "https://raw.githubusercontent.com/Dkhitman3/Hitman47/master/assets/images/hitman.png",
-  "website": "https://github.com/Dkhitman3/Bot#readme",
-  "repository": "https://github.com/Dkhitman3/Hitman47.git",
+  "logo": "https://raw.githubusercontent.com/ChristianNimb/Godspeed/master/assets/images/hitman.png",
+  "website": "https://github.com/ChristianNimb/Bot#readme",
+  "repository": "https://github.com/ChristianNimb/Godspeed.git",
   "success_url": "/",
   "env": {
     "BOT_NAME": {
