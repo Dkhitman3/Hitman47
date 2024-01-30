@@ -40,7 +40,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             printQRInTerminal: true,
             auth: state,
             logger: P({ level: 'fatal' }),
-            browser: ['Hitman47😈', 'fatal', '4.0.0'],
+            browser: ['Godspeed⚡', 'fatal', '4.0.0'],
             getMessage: async (key) => {
                 return {
                     conversation: ''
