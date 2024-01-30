@@ -43,10 +43,10 @@ export class EventHandler {
                   }\n\nHope you follow the rules and has arrived. I wonder if they brought their own cup of tea\n\n*‣ ${event.participants
                       .map((jid) => `@${jid.split('@')[0]}`)
                       .join(' ')}*`
-                : event.action === 'remove'
+                : event.action === 'no'
                 ? `Goodbye *${event.participants
                       .map((jid) => `@${jid.split('@')[0]}`)
-                      .join(', ')}* 👋🏻, It's been nice meeting you but we're probably not gonna miss you.`
+                      .join(', ')}* 👋🏻, It's been nice having you here you can leave now friend☺️.`
                 : event.action === 'demote'
                 ? `Ara Ara, looks like *@${
                       event.participants[0].split('@')[0]
