@@ -2,7 +2,7 @@ import { BaseCommand, Command, Message } from '../../Structures';
 import { proto } from '@whiskeysockets/baileys';
 
 @Command('bots', {
-    description: 'shows all H47 bots.',
+    description: 'shows all Gspeed bots.',
     category: 'general',
     usage: 'bots',
     aliases: ['b'],
@@ -21,7 +21,7 @@ export default class command extends BaseCommand {
                 const status = bot.active ? 'Active 🟩' : 'Inactive 🟥';
                 acc += `\n\n🔰 *Name: ${bot.sessionId}*\n🧧 *Number: ${bot.number}*\n🔵 *Status: ${status}*`;
                 return acc;
-            }, '*🏮 H47 Bots 🏮*');
+            }, '*🏮 Gspeed Bots 🏮*');
 
             await M.reply(formattedBotData);
         } else {
