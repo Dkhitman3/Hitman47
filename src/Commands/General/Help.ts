@@ -10,6 +10,13 @@ import { IArgs } from '../../Types'
     category: 'general'
 })
 export default class extends BaseCommand {
+    private imageUrls: string[] = [
+        'https://telegra.ph/file/7b5b298937221339e8a1c.jpg',
+        'https://telegra.ph/file/aa881a7723676791699bf.png',
+        'https://telegra.ph/file/ddf54585b8845b8566bdb.jpg',
+        'https://telegra.ph/file/3d475e1373a367a5f0558.jpg',
+    ]
+    
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) {
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
@@ -17,7 +24,8 @@ export default class extends BaseCommand {
                 data
             })).filter((command) => command.data.config.category !== 'bot')
             M.reply('*..i think i love you..*')
-            const buffer = this.client.assets.get('hitman47') as Buffer
+            const randomImageUrl = this.imageUrls[Math.floor(Math.random() * this.imageUrls.length)]
+            const image = await this.client.utils.getBuffer(randomImageUrl)
             let text = `✨! *@${M.sender.jid.split('@')[0]}*, 𝐈 𝐀𝐌 ${
                 this.client.config.name
             }\n\n𝐌𝐲 𝐏𝐫𝐞𝐟𝐢𝐱 𝐢𝐬 - "${this.client.config.prefix}"\n\n 1. *The usable commands are listed below*.`
@@ -34,7 +42,7 @@ export default class extends BaseCommand {
                 text += `\`\`\`➪${categoryCommands.join(' ● ')}\`\`\``
             }
             text += `\n\n📕 *Note:* Use\n\n ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*`
-            return void (await M.reply(buffer, 'image', undefined, undefined, text, [M.sender.jid]))
+            return void (await M.reply(image, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
             const command = this.handler.commands.get(cmd) || this.handler.aliases.get(cmd)
