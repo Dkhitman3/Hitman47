@@ -11,11 +11,13 @@ import { IArgs } from '../../Types'
 })
 export default class extends BaseCommand {
     private imageUrls: string[] = [
-        'https://telegra.ph/file/7b5b298937221339e8a1c.jpg',
-        'https://telegra.ph/file/aa881a7723676791699bf.png',
-        'https://telegra.ph/file/ddf54585b8845b8566bdb.jpg',
-        'https://telegra.ph/file/3d475e1373a367a5f0558.jpg',
+        'https://telegra.ph/file/96e86a5fe768fb5cc6193.jpg',
+        'https://telegra.ph/file/78e38a311fb321471d83c.jpg',
+        'https://telegra.ph/file/41964deb11222c107996e.jpg',
+        'https://telegra.ph/file/8b87b410b49d61de535d3.jpg',
+        'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
     ]
+    // you can add more pictures if you want bro of girl
     
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) {
