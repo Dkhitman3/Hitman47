@@ -43,10 +43,11 @@ export class Database {
     public getGroup = async (jid: string): Promise<TGroupModel> =>
         (await this.group.findOne({ jid })) || (await new this.group({ jid }).save())
 
-    public updateGroup = async (jid: string, field: keyof GroupSchema, update: boolean): Promise<void> => {
-        await this.getGroup(jid)
+    public updateGroup = async (jid: string, field: keyof GroupSchema, update: boolean | string): Promise<void> => {
+        const x = await this.getGroup(jid)
+        x[field as 'bot'] = update as string
         await this.group.updateOne({ jid }, { $set: { [field]: update } })
-    }
+  }
 
     public setGold = async (jid: string, gold: number, field: 'wallet' | 'bank' = 'wallet'): Promise<void> => {
         await this.updateUser(jid, field, 'inc', gold)
