@@ -9,6 +9,14 @@ import { BaseCommand, Command, Message } from '../../Structures'
     exp: 100
 })
 export default class extends BaseCommand {
+    private imageUrls: string[] = [
+        'https://telegra.ph/file/96e86a5fe768fb5cc6193.jpg',
+        'https://telegra.ph/file/78e38a311fb321471d83c.jpg',
+        'https://telegra.ph/file/41964deb11222c107996e.jpg',
+        'https://telegra.ph/file/8b87b410b49d61de535d3.jpg',
+        'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
+    ]
+    // you can add more pictures if you want bro of girl
     public override execute = async ({ reply }: Message): Promise<void> => {
         const users = await this.client.DB.user.count()
         let getGroups = await this.client.groupFetchAllParticipating()
