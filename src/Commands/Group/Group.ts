@@ -9,7 +9,7 @@ import { Command, BaseCommand, Message } from '../../Structures'
 export default class extends BaseCommand {
     public override execute = async (M: Message): Promise<void> => {
         if (!M.groupMetadata) return void M.reply('*Try Again*')
-        const { subject, owner, participants, admins } = M.groupMetadata
+        const { id, subject, owner, participants, admins } = M.groupMetadata
         const { mods, events } = await this.client.DB.getGroup(M.from)
         let pfpUrl: string | undefined
         try {
