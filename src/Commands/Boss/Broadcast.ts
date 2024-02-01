@@ -1,6 +1,6 @@
 import { IArgs } from '../../Types'
 import { Command, BaseCommand, Message } from '../../Structures'
-import { AnyMessageContent, proto, delay } from '@adiwajshing/baileys'
+import { AnyMessageContent, proto, delay } from '@whiskeysockets/baileys'
 
 @Command('broadcast', {
     description: '',
