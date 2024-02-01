@@ -22,7 +22,8 @@ export default class extends BaseCommand {
             homepage: string
             name: string
         }
-        const image = this.client.assets.get('hitman47') as Buffer
+        const randomImageUrl = this.imageUrls[Math.floor(Math.random() * this.imageUrls.length)]
+        const image = await this.client.utils.getBuffer(randomImageUrl)
         const uptime = this.client.utils.formatSeconds(process.uptime())
         const text = `*🍁 ${this.client.config.name} 🍁*\n\n📙 *Description: ${description}*\n\n🔗 *Commands:* ${this.handler.commands.size}\n🚦 *Uptime:* ${uptime}\n🎐 *Users:* ${users}\n🌃 *Mods:* ${this.client.config.mods.length}\n🔮 *Groups:* ${groups.length}`
         return void (await reply(image, 'image', undefined, undefined, text, undefined, {
@@ -32,4 +33,4 @@ export default class extends BaseCommand {
             sourceUrl: homepage
         }))
     }
-            }
+ }
