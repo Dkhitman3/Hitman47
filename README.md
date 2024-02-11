@@ -53,7 +53,7 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 ## Support 🧧
 
 <a href="https://chat.whatsapp.com/HbQRhkPZfcnFQ0wA8bKVaT">
-  <img src="https://img.shields.io/badge/Support_Group-0a0a0a?style=for-the-badge&logo=whatsapp&logoColor=white">
+  <img src="https://telegra.ph/file/4af43f908401ffb55c71e.jpg">
 </a>
 
 </br>
