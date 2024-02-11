@@ -50,7 +50,7 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 
 > Hitman47 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
 
-## Support 🧧
+!Support 🧧
 
 <a href="https://chat.whatsapp.com/HbQRhkPZfcnFQ0wA8bKVaT">
   <img src="https://telegra.ph/file/4af43f908401ffb55c71e.jpg">
