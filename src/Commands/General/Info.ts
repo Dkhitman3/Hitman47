@@ -16,7 +16,7 @@ export default class extends BaseCommand {
         'https://telegra.ph/file/8b87b410b49d61de535d3.jpg',
         'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
     ]
-    // you can add more pictures if you want bro of girl
+    // you can add more pictures if you want bro or girl
     public override execute = async ({ reply }: Message): Promise<void> => {
         const users = await this.client.DB.user.count()
         let getGroups = await this.client.groupFetchAllParticipating()
