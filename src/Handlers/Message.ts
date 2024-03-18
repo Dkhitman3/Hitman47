@@ -1,6 +1,7 @@
 import { join } from 'path'
 import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
+import { schedule } from 'node-cron'
 import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
 import { ICommand, IArgs, IPokemonAPIResponse } from '../Types'
