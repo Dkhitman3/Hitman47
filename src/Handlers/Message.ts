@@ -3,8 +3,9 @@ import { readdirSync } from 'fs-extra'
 import chalk from 'chalk'
 import { IQuiz } from 'anime-quiz'
 import { Message, Client, BaseCommand } from '../Structures'
-import { ICommand, IArgs } from '../Types'
+import { ICommand, IArgs, IPokemonAPIResponse } from '../Types'
 import axios from 'axios'
+import { Pokemon } from '../Database'
 import Game from 'chess-node'
 
 export class MessageHandler {
@@ -12,10 +13,42 @@ export class MessageHandler {
 
     public groups!: string[]
 
+    public wild: string[] = []
+
     public chess = {
         games: new Map<string, Game | undefined>(),
         challenges: new Map<string, { challenger: string; challengee: string } | undefined>(),
         ongoing: new Set<string>()
+    }
+
+    private spawnPokemon = async (): Promise<void> => {
+        schedule('*/7 * * * *', async () => {
+            if (this.wild.length < 1) return void null
+            for (let i = 0; i < this.wild.length; i++) {
+                setTimeout(async () => {
+                    const { wild, bot } = await this.client.DB.getGroup(this.wild[i])
+                    if (bot !== 'all' && bot !== this.client.config.name.split(' ')[0]) return void null
+                    if (!wild) return void null
+                    const id = Math.floor(Math.random() * 898)
+                    const data = await this.client.utils.fetch<IPokemonAPIResponse>(
+                        `https://pokeapi.co/api/v2/pokemon/${id}`
+                    )
+                    const level = Math.floor(Math.random() * (30 - 15) + 15)
+                    const image = data.sprites.other['official-artwork'].front_default as string
+                    this.pokemonResponse.set(this.wild[i], {
+                        name: data.name,
+                        level,
+                        image,
+                        id
+                    })
+                    const buffer = await this.client.utils.getBuffer(image)
+                    await this.client.sendMessage(this.wild[i], {
+                        image: buffer,
+                        caption: `A wild Pokemon appeared!`
+                    })
+                }, (i + 1) * 45 * 1000)
+            }
+        })
     }
 
     public handleMessage = async (M: Message): Promise<void> => {
@@ -98,6 +131,31 @@ export class MessageHandler {
         }
     }
 
+    public summonPokemon = async (
+        jid: string,
+        options: { pokemon: string | number; level?: number }
+    ): Promise<void> => {
+        const i = typeof options.pokemon === 'string' ? options.pokemon.toLowerCase() : options.pokemon.toString()
+        const level = options.level ? options.level : Math.floor(Math.random() * (30 - 15)) + 15
+        const data = await this.client.utils.fetch<IPokemonAPIResponse>(`https://pokeapi.co/api/v2/pokemon/${i}`)
+        if (!data.name)
+            return void (await this.client.sendMessage(jid, {
+                text: 'Invalid Pokemon name or ID'
+            }))
+        const image = data.sprites.other['official-artwork'].front_default as string
+        this.pokemonResponse.set(jid, {
+            name: data.name,
+            level,
+            image,
+            id: data.id
+        })
+        const buffer = await this.client.utils.getBuffer(image)
+        return void (await this.client.sendMessage(jid, {
+            image: buffer,
+            caption: `A wild Pokemon appeared!`
+        }))
+    }
+
     private moderate = async (M: Message): Promise<void> => {
     if (M.chat !== 'group') return void null;
     const { mods } = await this.client.DB.getGroup(M.from);
@@ -117,10 +175,24 @@ export class MessageHandler {
                 
                 return void (await this.client.groupParticipantsUpdate(M.from, [M.sender.jid], 'remove'));
             }
+         }
+      }
+    };
+
+    public loadWildEnabledGroups = async (): Promise<void> => {
+        const groups = !this.groups ? await this.client.getAllGroups() : this.groups
+        for (const group of groups) {
+            const data = await this.client.DB.getGroup(group)
+            if (!data.wild) continue
+            this.wild.push(group)
         }
-    }
-};
-            
+        this.client.log(
+            `Successfully loaded ${chalk.blueBright(`${this.wild.length}`)} ${
+                this.wild.length > 1 ? 'groups' : 'group'
+            } which has enabled wild`
+        )
+        await this.spawnPokemon()
+    }            
 
     private formatArgs = (args: string[]): IArgs => {
         args.splice(0, 1)
@@ -161,6 +233,10 @@ export class MessageHandler {
     public commands = new Map<string, ICommand>()
 
     public aliases = new Map<string, ICommand>()
+
+    public pokemonResponse = new Map<string, Pokemon>()
+
+    public pokemonTradeResponse = new Map<string, { offer: Pokemon; creator: string; with: string }>()
 
     private cooldowns = new Map<string, number>()
 
