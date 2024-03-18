@@ -24,5 +24,6 @@ import { MessageHandler, AssetHandler, EventHandler } from './Handlers'
 
     client.once('open', async () => {
         messageHandler.groups = await client.getAllGroups()
+        await messageHandler.loadWildEnabledGroups()
     })
 })()
