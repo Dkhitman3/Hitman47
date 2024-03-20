@@ -11,14 +11,14 @@ import { IArgs } from '../../Types'
 })
 export default class extends BaseCommand {
     private imageUrls: string[] = [
-        'https://telegra.ph/file/96e86a5fe768fb5cc6193.jpg',
-        'https://telegra.ph/file/78e38a311fb321471d83c.jpg',
-        'https://telegra.ph/file/41964deb11222c107996e.jpg',
-        'https://telegra.ph/file/8b87b410b49d61de535d3.jpg',
-        'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
+        'https://telegra.ph/file/277c60d1d94cd170cf67f.jpg',
+        'https://telegra.ph/file/67dc9b0fd95e6812243e9.jpg',
+        'https://telegra.ph/file/6a007d27ae59df5825e40.jpg',
+        'https://telegra.ph/file/7479b4def83c4c676498a.jpg',
+        'https://telegra.ph/file/3e80abd28d2188dbf942b.jpg',
     ]
     // you can add more pictures if you want bro of girl
-    
+   
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
         if (!context) {
             let commands = Array.from(this.handler.commands, ([command, data]) => ({
@@ -30,7 +30,9 @@ export default class extends BaseCommand {
             const image = await this.client.utils.getBuffer(randomImageUrl)
             let text = `✨! *@${M.sender.jid.split('@')[0]}*, 𝐈 𝐀𝐌 ${
                 this.client.config.name
-            }\n\n𝐌𝐲 𝐏𝐫𝐞𝐟𝐢𝐱 𝐢𝐬 - "${this.client.config.prefix}"\n\n 1. *The usable commands are listed below*.`
+            }\n\n𝐌𝐲 𝐏𝐫𝐞𝐟𝐢𝐱 𝐢𝐬 - "${this.client.config.prefix}"\n\n *⛩️❯─「MARIA BOT 🤭 」─❮⛩️*
+            1. *The usable commands are listed below*.
+            2. *Dont DM the Bot*.`
             const categories: string[] = []
             for (const command of commands) {
                 if (categories.includes(command.data.config.category)) continue
@@ -43,7 +45,9 @@ export default class extends BaseCommand {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`➪${categoryCommands.join(' ● ')}\`\`\``
             }
-            text += `\n\n📕 *Note:* Use\n\n ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*`
+            text += `\n\n⚠ *Note:* Use\n\n ${this.client.config.prefix}help <command_name> for more info of a specific command. Example: *${this.client.config.prefix}help hello*
+        *🎉NEW VISION 2024 ✅*
+  *█║█ ║█│█║▌©𝐌𝐀𝐑𝐈𝐀-𝐁𝐎𝐓 🤭 Inc*`
             return void (await M.reply(image, 'image', undefined, undefined, text, [M.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
