@@ -10,11 +10,11 @@ import { BaseCommand, Command, Message } from '../../Structures'
 })
 export default class extends BaseCommand {
     private imageUrls: string[] = [
-        'https://telegra.ph/file/96e86a5fe768fb5cc6193.jpg',
-        'https://telegra.ph/file/78e38a311fb321471d83c.jpg',
-        'https://telegra.ph/file/41964deb11222c107996e.jpg',
-        'https://telegra.ph/file/8b87b410b49d61de535d3.jpg',
-        'https://telegra.ph/file/e9aa5e407abe6d7911ace.jpg',
+        'https://telegra.ph/file/047af0c09b6a73acd74bf.jpg',
+        'https://telegra.ph/file/7479b4def83c4c676498a.jpg',
+        'https://telegra.ph/file/7479b4def83c4c676498a.jpg',
+        'https://telegra.ph/file/3e80abd28d2188dbf942b.jpg',
+        'https://telegra.ph/file/3e80abd28d2188dbf942b.jpg',
     ]
     // you can add more pictures if you want bro or girl
     public override execute = async ({ reply }: Message): Promise<void> => {
@@ -33,7 +33,9 @@ export default class extends BaseCommand {
         const randomImageUrl = this.imageUrls[Math.floor(Math.random() * this.imageUrls.length)]
         const image = await this.client.utils.getBuffer(randomImageUrl)
         const uptime = this.client.utils.formatSeconds(process.uptime())
-        const text = `*🍁 ${this.client.config.name} 🍁*\n\n📙 *Description: ${description}*\n\n🔗 *Commands:* ${this.handler.commands.size}\n🚦 *Uptime:* ${uptime}\n🎐 *Users:* ${users}\n🌃 *Mods:* ${this.client.config.mods.length}\n🔮 *Groups:* ${groups.length}`
+        const text = `*🍁 ${this.client.config.name} 🍁*\n\n📙 *Description: ${description}*\n\n🔗 *Commands:* ${this.handler.commands.size}\n🚦 *Uptime:* ${uptime}\n🎐 *Users:* ${users}\n🌃 *Mods:* ${this.client.config.mods.length}\n🔮 *Groups:* ${groups.length}
+     *THIS 𝐌𝐀𝐑𝐈𝐀-𝐁𝐎𝐓 🤭 IS CREATED BY 𝆺𝅥⃝➳ᴹᴿ᭄𝐉𝐅𝐋𝐄𝐗 ོ ×፝֟͜×💀*
+   *©𝐌𝐀𝐑𝐈𝐀-𝐁𝐎𝐓 🤭 Inc*`
         return void (await reply(image, 'image', undefined, undefined, text, undefined, {
             title: this.client.utils.capitalize(name),
             thumbnail: image,
