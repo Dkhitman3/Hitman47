@@ -4,7 +4,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     description: 'Retrieves view once message',
     category: 'utils',
     usage: 'retrieve [quote view once message]',
-    cooldown: 10,
+    cooldown: 5,
     exp: 40
 })
 export default class extends BaseCommand {
