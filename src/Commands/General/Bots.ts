@@ -21,7 +21,7 @@ export default class command extends BaseCommand {
                 const status = bot.active ? 'Active 🟩' : 'Inactive 🟥';
                 acc += `\n\n🔰 *Name: ${bot.sessionId}*\n🧧 *Number: ${bot.number}*\n🔵 *Status: ${status}*`;
                 return acc;
-            }, '*🏮 H47 Bots 🏮*');
+            }, '*🏮 𝐌𝐀𝐑𝐈𝐀-𝐁𝐎𝐓 🤭 🏮*');
 
             await M.reply(formattedBotData);
         } else {
