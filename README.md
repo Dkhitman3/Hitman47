@@ -9,7 +9,7 @@
 
 <a 
 href="https://github.com/marry2001/"><img title="Author" src="https://img.shields.io/badge/AUTHOR-MARIA-BOT-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
-<a href="https://github.com/marry2001/MARIA_BOT"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/marry2001/MARIA_BOT"><img title="Stars" src="https://img.shields.io/github/stars/marry2001/MARIA-BOT?color=54aeff&style=flat-square" /></a>
 <a href="https://github.com/marry2001/MARIA-BOT/network/members"><img title="Forks" src="https://img.shields.io/github/forks/marry2001/MARIA-BOT/?color=54aeff&style=flat-square" /></a>
 <a href="https://github.com/marry2001/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/marry2001/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
@@ -20,7 +20,7 @@ href="https://github.com/marry2001/"><img title="Author" src="https://img.shield
 ---
 
 ### Deployment Methods ♥️
-[![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg "Deploy with Heroku")](https://heroku.com/deploy?template=https://github.com/Dkhitman3/Hitman47/blob/master/ "Deploy with Heroku")
+[![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg "Deploy with Heroku")](https://heroku.com/deploy?template=https://github.com/marry2001/MARIA-BOT/blob/master/ "Deploy with Heroku")
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/apps/deploy?type=docker&image=quay.io/toshi-san001/koyeb-auto-install:main&env%5BPORT%5D=8000&env%5BPREFIX%5D&&env%5BMONGODB%5D&&env%MODS%5D&name=Hitman47)
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/3j9GNw?referralCode=TE7efK)
 
