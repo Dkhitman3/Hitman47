@@ -8,14 +8,14 @@
 </br>
 
 <a 
-href="https://github.com/marry2001/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
+href="https://github.com/marry2001/"><img title="Author" src="https://img.shields.io/badge/AUTHOR-MARIA-BOT-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
 <a href="https://github.com/marry2001/MARIA_BOT"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Dkhitman3/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
+<a href="https://github.com/marry2001/MARIA-BOT/network/members"><img title="Forks" src="https://img.shields.io/github/forks/marry2001/MARIA-BOT/?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/marry2001/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/marry2001/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
 1. **Fork the repo**
     <br>
-<a href='https://github.com/Dkhitman3/Hitman47/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/marry2001/MARIA-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 ---
 
@@ -29,8 +29,8 @@ href="https://github.com/marry2001/"><img title="Author" src="https://img.shield
 [Youtube 🎥](https://youtu.be/K7KycxbCTOs?feature=shared)
 
 ### Deployment Guide🏮
-- [Self Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
-- [Heroku Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
+- [Self Hosting Guide](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
+- [Heroku Hosting Guide](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
 
 ### Preview Info🧧
 - Fully Modular Design </br>
@@ -48,7 +48,7 @@ href="https://github.com/marry2001/"><img title="Author" src="https://img.shield
 
 ## License✡️
 
-> Hitman47 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
+> Maria🤭 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/LICENSE)
 
 ## Support 🧧
 
