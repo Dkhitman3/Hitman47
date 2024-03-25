@@ -1,15 +1,15 @@
 <p align="center">
-<img src="https://telegra.ph/file/20c8b2be57cca5ab47230.jpg" alt="nz" width="350"/>
+<img src="https://telegra.ph/file/24bc2ce64e9013305d667.jpg" alt="nz" width="350"/>
 </p>
 
-## ***♥️Hitman47♥️***
+## ***♥️MARIA-MD🤭♥️***
 > This Script WhatsApp Bot Using Library Baileys & Script is free for everyone, not for Sale!
 > ***Note: it's a modified version of [chisato-WhatsAp](https://github.com/AliAryanTech/Chisato-WhatsApp)***
 </br>
 
 <a 
-href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
-<a href="https://github.com/Dkhitman3/Hitman47"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
+href="https://github.com/marry2001/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
+<a href="https://github.com/marry2001/MARIA_BOT"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
 <a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
 <a href="https://github.com/Dkhitman3/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Dkhitman3/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
