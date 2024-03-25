@@ -61,12 +61,12 @@ href="https://github.com/marry2001/"><img title="Author" src="https://img.shield
 ## 🎗Help
 Please give this repo a ⭐ if it helped you.
 
-## ✍︎ Hitman47 ♥️
+## ✍︎ MARIA-MD🤭♥️
 
-*This is a lovely project by Hitman47 🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
+*This is a lovely project by MARIA-BOT🤭🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
  
 HOW TO REACH THE OWNER? 👇👇👇
-   <a href="https://wa.me/+27844132352?text=Hi%20I%20Am%20From%20GitHub%20☺️">
+   <a href="https://wa.me/+255694039542?text=Hi%20I%20Am%20From%20GitHub%20☺️">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>&nbsp;&nbsp;
    <a
