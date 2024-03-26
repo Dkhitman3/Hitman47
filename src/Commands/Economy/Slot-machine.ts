@@ -5,7 +5,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
     category: 'economy',
     description: 'Bets the given amount of gold in a slot machine',
     usage: 'slot <amount>',
-    cooldown: 35,
+    cooldown: 5,
     exp: 10,
     aliases: ['bet']
 })
