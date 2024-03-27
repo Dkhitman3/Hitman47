@@ -1,6 +1,6 @@
 import { prop, getModelForClass } from '@typegoose/typegoose'
 import { Document } from 'mongoose'
-import { ICharacter, ICharacter as WaifuResponse } from '@shineiichijo/marika
+import { ICharacter, ICharacter as WaifuResponse } from '@shineiichijo/marika'
 
 class Gallery implements ICharacter {
     @prop({ required: true })
