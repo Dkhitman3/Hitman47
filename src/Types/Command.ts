@@ -44,6 +44,7 @@ export type TCategory =
     | 'pokemon'
     | 'general'
     | 'media'
+    | 'characters'
     | 'moderation'
     | 'educative'
     | 'boss'
