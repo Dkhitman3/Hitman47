@@ -15,6 +15,9 @@ export class GroupSchema {
     public bot!: string
 
     @prop({ type: Boolean, required: true, default: false })
+    public chara!: boolean
+
+    @prop({ type: Boolean, required: true, default: false })
     public mods!: boolean
 
 }
