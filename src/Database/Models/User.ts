@@ -1,5 +1,29 @@
 import { prop, getModelForClass } from '@typegoose/typegoose'
 import { Document } from 'mongoose'
+import { ICharacter, ICharacter as WaifuResponse } from '@shineiichijo/marika
+
+class Gallery implements ICharacter {
+    @prop({ required: true })
+    public mal_id!: ICharacter['mal_id']
+
+    @prop({ type: String, required: true })
+    public url!: string
+
+    @prop({ type: Object, required: true })
+    public images!: ICharacter['images']
+
+    @prop({ type: String, required: true })
+    public name!: string
+
+    @prop({ type: () => [String], required: true, default: [] })
+    public nicknames!: string[]
+
+    @prop({ type: String, required: true })
+    public about!: string
+
+    @prop({ required: true })
+    public favorites!: number
+}
 
 export class Pokemon {
     @prop({ type: String, required: true })
@@ -45,6 +69,9 @@ export class UserSchema {
 
     @prop({ type: Number, required: true, default: 1 })
     public level!: number
+
+    @prop({ type: () => Gallery, required: true, default: [] })
+    public gallery!: Gallery[]
 
     @prop({ type: String, required: true })
     public tag!: string
