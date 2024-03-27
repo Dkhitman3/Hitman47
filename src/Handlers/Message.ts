@@ -16,6 +16,8 @@ export class MessageHandler {
 
     public wild: string[] = []
 
+    public chara: string[] = []
+
     public chess = {
         games: new Map<string, Game | undefined>(),
         challenges: new Map<string, { challenger: string; challengee: string } | undefined>(),
@@ -157,6 +159,42 @@ export class MessageHandler {
         }))
     }
 
+    private spawnChara = async (): Promise<void> => {
+        schedule('*/5 * * * *', async () => {
+            if (this.chara.length < 1) return void null
+            for (let i = 0; i < this.chara.length; i++) {
+                setTimeout(async () => {
+                    const { chara, bot } = await this.client.DB.getGroup(this.wild[i])
+                    if (bot !== 'all' && bot !== this.client.config.name.split(' ')[0]) return void null
+                    if (!chara) return void null
+                    await new Character()
+                        .getRandomCharacter()
+                        .then(async (chara) => {
+                            const price = Math.floor(Math.random() * (50000 - 25000) + 25000)
+                            let source = ''
+                            await new Character()
+                                .getCharacterAnime(chara.mal_id)
+                                .then((res) => (source = res.data[0].anime.title))
+                                .catch(async () => {
+                                    await new Character()
+                                        .getCharacterManga(chara.mal_id.toString())
+                                        .then((res) => (source = res.data[0].manga.title))
+                                        .catch(() => {})
+                                })
+                            const buffer = await this.client.utils.getBuffer(chara.images.jpg.image_url)
+                            const MessageX = {
+                                image: buffer,
+                                caption: `*🃏━『 ANIME-CHARA 』━*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n🌐 *Source: ${source}*\n\n💰 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`
+                            }
+                            this.charaResponse.set(this.chara[i], { price, data: chara })
+                            await this.client.sendMessage(this.chara[i], MessageX)
+                        })
+                        .catch(() => {})
+                }, (i + 1) * 20 * 1000)
+            }
+        })
+    }
+
     private moderate = async (M: Message): Promise<void> => {
     if (M.chat !== 'group') return void null;
     const { mods } = await this.client.DB.getGroup(M.from);
@@ -179,6 +217,21 @@ export class MessageHandler {
          }
       }
     };
+
+    public loadCharaEnabledGroups = async (): Promise<void> => {
+        const groups = !this.groups ? await this.client.getAllGroups() : this.groups
+        for (const group of groups) {
+            const data = await this.client.DB.getGroup(group)
+            if (!data.chara) continue
+            this.chara.push(group)
+        }
+        this.client.log(
+            `Successfully loaded ${chalk.blueBright(`${this.chara.length}`)} ${
+                this.chara.length > 1 ? 'groups' : 'group'
+            } which has enabled chara`
+        )
+        await this.spawnChara()
+    }
 
     public loadWildEnabledGroups = async (): Promise<void> => {
         const groups = !this.groups ? await this.client.getAllGroups() : this.groups
@@ -236,6 +289,8 @@ export class MessageHandler {
     public aliases = new Map<string, ICommand>()
 
     public pokemonResponse = new Map<string, Pokemon>()
+
+    public charaResponse = new Map<string, { price: number; data: WaifuResponse }>()
 
     public pokemonTradeResponse = new Map<string, { offer: Pokemon; creator: string; with: string }>()
 
