@@ -44,7 +44,7 @@ export default class extends BaseCommand {
                 text += `\`\`\`➪${categoryCommands.join(' ● ')}\`\`\``
             }
             text += `\n\n📕 *Note:*\n
- *➪ Use\n\n ${this.client.config.prefix}help <command_name> for more info of a specific command* 
+ *➪ Use ${this.client.config.prefix}help <command_name> for more info of a specific command* 
  *➪ Example: *${this.client.config.prefix}help hello*
  *➪ <> hitman47 ©️ 2024 Command List*`
             return void (await M.reply(image, 'image', undefined, undefined, text, [M.sender.jid]))
