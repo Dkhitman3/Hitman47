@@ -1,21 +1,21 @@
 <p align="center">
-<img src="https://telegra.ph/file/20c8b2be57cca5ab47230.jpg" alt="nz" width="350"/>
+<img src="https://telegra.ph/file/24bc2ce64e9013305d667.jpg" alt="nz" width="350"/>
 </p>
 
-## ***♥️Hitman47♥️***
+## ***♥️MARIA-MD🤭♥️***
 > This Script WhatsApp Bot Using Library Baileys & Script is free for everyone, not for Sale!
 > ***Note: it's a modified version of [chisato-WhatsAp](https://github.com/AliAryanTech/Chisato-WhatsApp)***
 </br>
 
 <a 
-href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields.io/badge/Author-Hitman47-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
-<a href="https://github.com/Dkhitman3/Hitman47"><img title="Stars" src="https://img.shields.io/github/stars/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Hitman47/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Dkhitman3/Hitman47?color=54aeff&style=flat-square" /></a>
-<a href="https://github.com/Dkhitman3/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/Dkhitman3/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
+href="https://github.com/marry2001/"><img title="Author" src="https://img.shields.io/badge/AUTHOR-MARIA-BOT-blue.svg?color=54aeff&style=for-the-badge&logo=github" /></a>  
+<a href="https://github.com/marry2001/MARIA_BOT"><img title="Stars" src="https://img.shields.io/github/stars/marry2001/MARIA-BOT?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/marry2001/MARIA-BOT/network/members"><img title="Forks" src="https://img.shields.io/github/forks/marry2001/MARIA-BOT/?color=54aeff&style=flat-square" /></a>
+<a href="https://github.com/marry2001/Bot/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/marry2001/Bot?label=watchers&color=54aeff&style=flat-square" /></a> <br>
 
 1. **Fork the repo**
     <br>
-<a href='https://github.com/Dkhitman3/Hitman47/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
+<a href='https://github.com/marry2001/MARIA-BOT/fork' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/Fork Repo-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=black'/></a>
 
 ---
 
@@ -29,8 +29,8 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 [Youtube 🎥](https://youtu.be/K7KycxbCTOs?feature=shared)
 
 ### Deployment Guide🏮
-- [Self Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
-- [Heroku Hosting Guide](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
+- [Self Hosting Guide](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/Self-Hosting-Guide.md)
+- [Heroku Hosting Guide](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/Heroku-Hosting-Guide.md)
 
 ### Preview Info🧧
 - Fully Modular Design </br>
@@ -48,11 +48,11 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 
 ## License✡️
 
-> Hitman47 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Dkhitman3/Hitman47/tree/master?tab=readme-ov-file/blob/master/LICENSE)
+> Maria🤭 is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/marry2001/MARIA-BOT/tree/master?tab=readme-ov-file/blob/master/LICENSE)
 
 ## Support 🧧
 
-<a href="https://chat.whatsapp.com/CrgPUQwW2LaGxzTC9ZjMbp">
+<a href="https://chat.whatsapp.com/IE4TnhkOjjyEf53aJMTfwW">
   <img src="https://img.shields.io/badge/Support_Group-0a0a0a?style=for-the-badge&logo=whatsapp&logoColor=white">
 </a>
 
@@ -61,12 +61,12 @@ href="https://github.com/DkHitman/"><img title="Author" src="https://img.shields
 ## 🎗Help
 Please give this repo a ⭐ if it helped you.
 
-## ✍︎ Hitman47 ♥️
+## ✍︎ MARIA-MD🤭♥️
 
-*This is a lovely project by Hitman47 🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
+*This is a lovely project by MARIA-BOT🤭🌹. if you have a problem with this project go fuck yourself. After forking don't do any change. If you wanna do any changes click the following Whatsapp icons and join our groups and contact an Owner*
  
 HOW TO REACH THE OWNER? 👇👇👇
-   <a href="https://wa.me/+27844132352?text=Hi%20I%20Am%20From%20GitHub%20☺️">
+   <a href="https://wa.me/+255694039542?text=Hi%20I%20Am%20From%20GitHub%20☺️">
     <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>&nbsp;&nbsp;
    <a
