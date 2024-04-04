@@ -1,5 +1,5 @@
 {
-  "name": "Hitman47",
+  "name": "ZUBEIR 254",
   "description": "A WhatsApp Bot written in TypeScript using Baileys.",
   "keywords": [
     "bot",
@@ -8,8 +8,8 @@
     "whatsapp-anime-bot"
   ],
   "logo": "https://raw.githubusercontent.com/Dkhitman3/Hitman47/master/assets/images/hitman.png",
-  "website": "https://github.com/Dkhitman3/Bot#readme",
-  "repository": "https://github.com/Dkhitman3/Hitman47.git",
+  "website": "https://github.com/ZÛBËÎR/Bot#readme",
+  "repository": "https://github.com/ZÛBËÎR/Hitman47.git",
   "success_url": "/",
   "env": {
     "BOT_NAME": {
@@ -25,8 +25,8 @@
       "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
       "required": false
     },
-    "MONGO_URI": {
-      "description": "A secret String for Mongodb Connection.(Required)"
+    
+  
     },
     "CHAT_BOT_URL": {
       "description": "Your API key from Brainshop"
