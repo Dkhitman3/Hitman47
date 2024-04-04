@@ -1,5 +1,5 @@
 {
-  "name": "Hitman47",
+  "name": "ZUBEIR",
   "version": "0.1.0",
   "description": "A WhatsApp bot written in TypeScript using Baileys",
   "author": "dk",
@@ -17,9 +17,9 @@
     "postinstall": "yarn build"
   },
   "bugs": {
-    "url": "https://github.com/Dkhitman3/Bot/issues"
+    "url": "https://github.com/ZÛBËÎR/Bot/issues"
   },
-  "homepage": "https://github.com/Dkhitman3/Bot",
+  "homepage": "https://github.com/ZUBERI3/Bot",
   "repository": {
     "type": "git",
     "url": "https://github.com/Dkhitman3/Bot.git"
