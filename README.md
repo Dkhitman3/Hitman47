@@ -73,7 +73,6 @@ HOW TO REACH THE OWNER? 👇👇👇
 
 ## Thanks To♥️
 * [`Shinei | Whatshell`](https://github.com/LuckyYam/)
-* [`@AliAryanTech@`](https://github.com/AliAryanTech/Chisato-WhatsApp)
 
 - 🌱 I’m currently learning **TS Language,B##**
 
