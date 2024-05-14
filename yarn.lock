@@ -1336,10 +1336,10 @@
     "@wasm-audio-decoders/common" "9.0.1"
     codec-parser "2.4.3"
 
-"@whiskeysockets/baileys@^6.6.0":
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/@whiskeysockets/baileys/-/baileys-6.6.0.tgz#072925bd0d948b6b2bc50a630043c0bd51352651"
-  integrity sha512-4aIPHztdLZP24Qac7mudZTMR7qIsEDQxlpCBJE4atYHFAa5tlwCGPcUy249q3aaayxYtQAwheVG42L6AkRxAwg==
+"@whiskeysockets/baileys@^6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@whiskeysockets/baileys/-/baileys-6.7.2.tgz#6b9f9333309561df22eabfbc1b2b793e04fd5183"
+  integrity sha512-ttZJuFo4iuwzQbUClx+RKaREStaVYwc0uNRlcd5kLEV3z8Lp2fcoKqrFMKIQbm6+8dgGK8MdYHGtAv9eh//itg==
   dependencies:
     "@adiwajshing/keyed-db" "^0.2.4"
     "@hapi/boom" "^9.1.3"
@@ -3909,11 +3909,6 @@ picomatch@^2.3.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-pokenode-ts@^1.14.0:
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/pokenode-ts/-/pokenode-ts-1.20.0.tgz#3f07e31160f6b7f045e86726d66ed74bd10f860c"
-  integrity sha512-6MekrbiQc9nmaZJ5xpyhRSEMFo4xEsMuB7RR3EqfPvuXo/3StnH1p4brfIiIWDCcZvu7t9a0vjodiR4TnRdLEw==
-
 pino-abstract-transport@v0.5.0:
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/pino-abstract-transport/-/pino-abstract-transport-0.5.0.tgz#4b54348d8f73713bfd14e3dc44228739aa13d9c0"
@@ -3978,6 +3973,11 @@ png-js@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/png-js/-/png-js-1.0.0.tgz#e5484f1e8156996e383aceebb3789fd75df1874d"
   integrity sha512-k+YsbhpA9e+EFfKjTCH3VW6aoKlyNYI6NYdTfDL4CIvFnvsuO84ttonmZE7rc+v23SLTH8XX+5w/Ak9v0xGY4g==
+
+pokenode-ts@^1.14.0:
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/pokenode-ts/-/pokenode-ts-1.20.0.tgz#3f07e31160f6b7f045e86726d66ed74bd10f860c"
+  integrity sha512-6MekrbiQc9nmaZJ5xpyhRSEMFo4xEsMuB7RR3EqfPvuXo/3StnH1p4brfIiIWDCcZvu7t9a0vjodiR4TnRdLEw==
 
 prebuild-install@^7.1.1:
   version "7.1.1"
@@ -4870,7 +4870,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
-uuid@^8.3.2:
+uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
