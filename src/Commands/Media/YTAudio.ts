@@ -17,6 +17,6 @@ export default class extends BaseCommand {
         const { validate, download } = new YT(url, 'audio')
         if (!validate()) return void M.reply('Provide a valid YouTube video URL, Baka!')
         const audio = await download()
-        return void (await M.reply(audio, 'audio'))
+        return void (await M.reply(audio, 'audio', undefined, 'audio/mpeg'))
     }
-}
+    }
