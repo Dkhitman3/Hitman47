@@ -4,7 +4,7 @@
 
 ## ***♥️Hitman47♥️***
 > This Script WhatsApp Bot Using Library Baileys & Script is free for everyone, not for Sale!
-> ***Note: it's a modified version of [chisato-WhatsAp](https://github.com/AliAryanTech/Chisato-WhatsApp)***
+> ***Note: it's a modified version)***
 </br>
 
 <a 
