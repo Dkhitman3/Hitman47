@@ -39,7 +39,6 @@
     "cheerio": "^1.0.0-rc.12",
     "chess-image-generator-ts": "^1.0.0",
     "chess-node": "^1.1.0",
-    "@distube/ytdl-core": "latest",
     "dotenv": "^16.0.3",
     "node-cron": "^3.0.0",
     "emoji-regex": "^10.2.1",
