@@ -31,6 +31,7 @@
     "@shineiichijo/nhentai-ts": "^1.0.0",
     "@typegoose/typegoose": "^10.0.0",
     "@whiskeysockets/baileys": "^6.7.2",
+    "@distube/ytdl-core": "latest",
     "axios": "^1.4.0",
     "anime-quiz": "^3.0.0",
     "axios-cache-interceptor": "^1.0.1",
