@@ -2,12 +2,11 @@ import chalk from 'chalk'
 import { config as Config } from 'dotenv'
 import EventEmitter from 'events'
 import TypedEventEmitter from 'typed-emitter'
-import Baileys, { DisconnectReason, fetchLatestBaileysVersion, ParticipantAction, proto } from '@whiskeysockets/baileys'
+import Baileys, { DisconnectReason, fetchLatestBaileysVersion, ParticipantAction, SocketConfig, proto } from '@whiskeysockets/baileys'
 import P from 'pino'
 import { connect, set } from 'mongoose'
 import { Boom } from '@hapi/boom'
 import qr from 'qr-image'
-import { Pokemon } from '../Database'
 import { Utils } from '../lib'
 import { Database, Contact, Message, Server, AuthenticationFromDatabase } from '.'
 import { IConfig, client, IEvent, ICall } from '../Types'
@@ -18,11 +17,14 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
         super()
         Config()
         this.config = {
-            name: process.env.BOT_NAME || 'bot',
+            name: process.env.BOT_NAME || 'Hitman47🧧',
             session: process.env.SESSION || 'SESSION',
-            prefix: process.env.PREFIX || '#',
-            gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
+            prefix: '!',
             mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
+            casinoGroup: '120363182715438850@g.us',
+            gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
+            adminsGroup: '120363294453724219@g.us',
+            supportGroups: ['120363193557183181@g.us'],
             chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
             PORT: Number(process.env.PORT || 3000)
         }
@@ -31,7 +33,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
 
     public start = async (): Promise<client> => {
         await connect(
-            'mongodb+srv://herrison:wells@cluster0.tqhtuou.mongodb.net/?retryWrites=true&w=majority'
+            'mongodb+srv://mokaaya:mokaaya254@cluster0.w2kuc8r.mongodb.net/?retryWrites=true&w=majority'
         )
         this.log('Connected to the Database')
         const { useDatabaseAuth } = new AuthenticationFromDatabase(this.config.session)
@@ -40,7 +42,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             version: (await fetchLatestBaileysVersion()).version,
             printQRInTerminal: true,
             auth: state,
-            logger: P({ level: 'fatal' }),
+            logger: P({ level: 'fatal' }) as unknown as SocketConfig['logger'],
             browser: ['Hitman47😈', 'fatal', '4.0.0'],
             getMessage: async (key) => {
                 return {
@@ -121,7 +123,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
         this.ev.on('creds.update', saveState)
         return this.client
     }
-
+         
     public utils = new Utils()
 
     public DB = new Database()
@@ -137,7 +139,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
     public assets = new Map<string, Buffer>()
 
     public log = (text: string, error: boolean = false): void =>
-        console.log(chalk[error ? 'red' : 'blue']('[Dkhitman3]'), chalk[error ? 'redBright' : 'greenBright'](text))
+        console.log(chalk[error ? 'red' : 'blue']('[ASUNA]'), chalk[error ? 'redBright' : 'greenBright'](text))
 
     public QR!: Buffer
 
@@ -210,5 +212,5 @@ type Events = {
     participants_update: (event: IEvent) => void
     open: () => void
     new_group_joined: (group: { jid: string; subject: string }) => void
-}
-    
+            }
+            
