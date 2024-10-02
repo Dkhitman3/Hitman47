@@ -2,11 +2,12 @@ import chalk from 'chalk'
 import { config as Config } from 'dotenv'
 import EventEmitter from 'events'
 import TypedEventEmitter from 'typed-emitter'
-import Baileys, { DisconnectReason, fetchLatestBaileysVersion, ParticipantAction, SocketConfig, proto } from '@whiskeysockets/baileys'
+import Baileys, { DisconnectReason, fetchLatestBaileysVersion, ParticipantAction, proto } from '@whiskeysockets/baileys'
 import P from 'pino'
 import { connect, set } from 'mongoose'
 import { Boom } from '@hapi/boom'
 import qr from 'qr-image'
+import { Pokemon } from '../Database'
 import { Utils } from '../lib'
 import { Database, Contact, Message, Server, AuthenticationFromDatabase } from '.'
 import { IConfig, client, IEvent, ICall } from '../Types'
@@ -17,14 +18,11 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
         super()
         Config()
         this.config = {
-            name: process.env.BOT_NAME || 'Hitman47🧧',
+            name: process.env.BOT_NAME || 'bot',
             session: process.env.SESSION || 'SESSION',
-            prefix: '!',
-            mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
-            casinoGroup: '120363182715438850@g.us',
+            prefix: process.env.PREFIX || '#',
             gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
-            adminsGroup: '120363294453724219@g.us',
-            supportGroups: ['120363193557183181@g.us'],
+            mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
             chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
             PORT: Number(process.env.PORT || 3000)
         }
@@ -33,7 +31,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
 
     public start = async (): Promise<client> => {
         await connect(
-            'mongodb+srv://mokaaya:mokaaya254@cluster0.w2kuc8r.mongodb.net/?retryWrites=true&w=majority'
+            'mongodb+srv://herrison:wells@cluster0.tqhtuou.mongodb.net/?retryWrites=true&w=majority'
         )
         this.log('Connected to the Database')
         const { useDatabaseAuth } = new AuthenticationFromDatabase(this.config.session)
