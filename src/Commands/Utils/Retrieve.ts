@@ -3,6 +3,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 @Command('retrieve', {
     description: 'Retrieves view once message',
     category: 'utils',
+    dm: true,
     usage: 'retrieve [quote view once message]',
     cooldown: 5,
     exp: 40
