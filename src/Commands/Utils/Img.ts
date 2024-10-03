@@ -3,6 +3,7 @@ import { BaseCommand, Command, Message } from '../../Structures'
 @Command('img', {
     description: 'Converts sticker to image',
     exp: 35,
+    dm: true,
     category: 'utils',
     aliases: ['toimg'],
     usage: 'img [quote_sticker]',
