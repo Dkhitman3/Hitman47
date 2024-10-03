@@ -7,6 +7,7 @@ import { IArgs } from '../../Types'
     description: 'Converts image/video/gif to sticker',
     category: 'utils',
     exp: 15,
+    dm: true,
     cooldown: 10,
     usage: 'sticker [caption/quote message containing media] [options] | <pack> | <author>',
     aliases: ['s']
