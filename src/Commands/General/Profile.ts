@@ -6,6 +6,7 @@ import { getStats } from '../../lib'
     category: 'general',
     aliases: ['p'],
     cooldown: 15,
+    dm: true,
     exp: 30,
     usage: 'profile [tag/quote users]'
 })
