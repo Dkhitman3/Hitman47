@@ -11,6 +11,8 @@ export interface IConfig {
     PORT: number
     /** API for google */
     gkey: string
+    /** API for music */
+    API_URL: string
     /** API from BrainShop for chat bot */
     chatBotUrl: string
 }
