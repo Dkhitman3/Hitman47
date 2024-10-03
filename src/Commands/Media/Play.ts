@@ -15,9 +15,12 @@ export default class extends BaseCommand {
         if (!context) return void M.reply('Provide a term to play, Baka!')
         const term = context.trim()
 
-        const videos = await this.client.utils.fetch<YT_Search[]>(`https://weeb-api.vercel.app/ytsearch?query=${term}`)
-        if (!videos || !videos.length) return void M.reply(`No matching songs found | *"${term}"*`)
-        const buffer = await new YT(videos[0].url, 'audio').download()
+        // Fetch video information from the new API
+        const videoResponse = await this.client.utils.fetch<YT_Search>(`https://ironman.koyeb.app/ironman/dl/ytdl2?url=${term}`)
+        if (!videoResponse || !videoResponse.url) return void M.reply(`No matching songs found | *"${term}"*`)
+
+        // Download the audio using the new API response
+        const buffer = await new YT(videoResponse.url, 'audio').download()
 
         const coolestMessages = [
             '*Get ready to groove! Here comes your song...*',
@@ -31,13 +34,21 @@ export default class extends BaseCommand {
 
         M.reply(randomMessage)
 
+        // Get the thumbnail buffer
+        const thumbnailBuffer = await this.getBuffer(videoResponse.thumbnail)
+
         return void (await M.reply(buffer, 'audio', undefined, 'audio/mpeg', undefined, undefined, {
-            title: videos[0].title,
-            thumbnail: await this.client.utils.getBuffer(videos[0].thumbnail),
+            title: videoResponse.title,
+            thumbnail: thumbnailBuffer,
             mediaType: 2,
-            body: videos[0].description,
-            mediaUrl: videos[0].url
+            body: videoResponse.description,
+            mediaUrl: videoResponse.url
         }))
     }
-      }
-          
+
+    // Helper function to get buffer from a URL
+    private async getBuffer(url: string): Promise<Buffer> {
+        const response = await this.client.utils.fetch(url, { responseType: 'arraybuffer' })
+        return Buffer.from(response, 'binary')
+    }
+}
