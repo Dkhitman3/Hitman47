@@ -1,5 +1,6 @@
 import { Command, BaseCommand, Message } from '../../Structures'
 import axios from 'axios'; // Import axios
+import { IArgs } from '../../Types'
 
 // Define the structure for Video and DownloadData
 interface Video {
