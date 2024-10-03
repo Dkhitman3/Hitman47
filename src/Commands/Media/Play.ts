@@ -11,22 +11,13 @@ import { IArgs, YT_Search } from '../../Types'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
-        if (!context) return void M.reply('Provide a term to play, Baka!')
-        
+        if (!context) return void M.reply('Provide a term to play, Baka!') 
         const term = context.trim();
-        
-        // Fetch the videos using the search term
         const videos: YT_Search[] = await this.client.utils.fetch<YT_Search[]>(`${this.client.config.API_URL}search?term=${term}`);
-        
-        // Check if there are any matching videos
         if (!videos || !videos.length) {
             return void M.reply(`No matching songs found | *"${term}"*`);
         }
-        
-        // Download the audio from the first video result
         const buffer = await new YT(videos[0].url, 'audio').download();
-        
-        // Send the audio with metadata as a response
         return void (await M.reply(buffer, 'audio', undefined, 'audio/mpeg', undefined, undefined, {
             title: videos[0].title,
             thumbnail: await this.client.utils.getBuffer(videos[0].thumbnail),
