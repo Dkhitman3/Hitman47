@@ -11,19 +11,18 @@ import { IArgs, YT_Search } from '../../Types'
 })
 export default class extends BaseCommand {
     public override execute = async (M: Message, { context }: IArgs): Promise<void> => {
-        if (!context) return void M.reply('Provide a term to play, Baka!') 
+        if (!context) return void M.reply('Provide a term to play, Baka!');
         const term = context.trim();
-        const videos: YT_Search[] = await this.client.utils.fetch<YT_Search[]>(`${this.client.config.API_URL}search?term=${term}`);
-        if (!videos || !videos.length) {
-            return void M.reply(`No matching songs found | *"${term}"*`);
+        const videos = await this.client.utils.fetch(`${this.client.config.API_URL}ytsearch?query=${term}`);
+        if (!videos || !videos.length) return void M.reply(`No matching songs found | *"${term}"*`);
+        const { data } = await axios.get(`${this.client.config.API_URL}download?url=${videos[0].url}&type=audio`)
+        const buffer = await this.client.utils.getBuffer(data.data.url)      
+            return void (await M.reply(buffer, 'audio', undefined, 'audio/mpeg', undefined, undefined, {
+                title: videos[0].title,
+                thumbnail: await this.client.utils.getBuffer(videos[0].thumbnail),
+                mediaType: 2,
+                body: videos[0].description,
+                mediaUrl: videos[0].url
+            }));
         }
-        const buffer = await new YT(videos[0].url, 'audio').download();
-        return void (await M.reply(buffer, 'audio', undefined, 'audio/mpeg', undefined, undefined, {
-            title: videos[0].title,
-            thumbnail: await this.client.utils.getBuffer(videos[0].thumbnail),
-            mediaType: 2,
-            body: videos[0].description,
-            mediaUrl: videos[0].url
-        }));
     }
-}
