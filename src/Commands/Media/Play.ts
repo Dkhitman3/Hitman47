@@ -1,5 +1,6 @@
 import { Command, BaseCommand, Message } from '../../Structures'
 import { IArgs, YT_Search } from '../../Types'
+import axios from 'axios' // Add axios for handling the request
 
 @Command('play', {
     description: 'Plays a song of the given term from YouTube',
@@ -19,7 +20,10 @@ export default class extends BaseCommand {
 
         // Use the new API to download the video audio
         const downloadUrl = `https://ironman.koyeb.app/ironman/dl/ytdl2?url=${videos[0].url}`
-        const buffer = await this.client.utils.fetch(downloadUrl) // Fetch audio from the new API
+        
+        // Fetch the audio file as a buffer
+        const response = await axios.get(downloadUrl, { responseType: 'arraybuffer' }) // Use axios to get raw binary data
+        const buffer = Buffer.from(response.data) // Convert the response to a buffer
 
         if (!buffer) return void M.reply('Failed to download the song, please try again later.')
 
