@@ -21,6 +21,7 @@ export class Client extends (EventEmitter as new () => TypedEventEmitter<Events>
             name: process.env.BOT_NAME || 'bot',
             session: process.env.SESSION || 'SESSION',
             prefix: process.env.PREFIX || '#',
+            API_URL: 'https://d-mail-api.vercel.app/',
             gkey: 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWIEcx',
             mods: (process.env.MODS || '27844132352').split(', ').map((user) => `${user}@s.whatsapp.net`),
             chatBotUrl: 'http://api.brainshop.ai/get?bid=170305&key=8OpWeiccHtCb1dFj&uid=[uid]&msg=[msg',
